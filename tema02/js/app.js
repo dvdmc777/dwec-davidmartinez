@@ -1,5 +1,5 @@
 document.getElementById("boton1").addEventListener("click", function() {
-    alert("David");
+    alert("David Martínez Castro");
     console.log("Has pulsado el boton saludar.");
 });
 document.getElementById("boton2").addEventListener("click", function() {
