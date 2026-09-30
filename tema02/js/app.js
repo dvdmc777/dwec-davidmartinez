@@ -9,5 +9,5 @@ document.getElementById("boton2").addEventListener("click", function() {
 
 document.getElementById("boton3").addEventListener("click", function() {
     alert(navigator.userAgent);    
-    console.log("Que navegador soy.");
+    console.log("Has pulsado el boton Que navegador soy.");
 });
