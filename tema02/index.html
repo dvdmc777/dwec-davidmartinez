@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Título de la página</title>
+
+  <!-- CSS de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Iconos de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Tu CSS, SIEMPRE después del de Bootstrap -->
+  <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar container">
+        <span>David Martínez Castro</span>
+        <a href="interaccion.html">interaccion.html</a>
+    </nav>
+    <table class="table table-striped">
+        <tr>
+            <td>Chrome</td>
+            <td>Google</td>
+            <td>Blink</td>
+            <td>V8</td>
+            <td>Basado en Chromium</td>
+        </tr>
+        <tr>
+            <td>Firefox</td>
+            <td>Mozilla</td>
+            <td>Gecko</td>
+            <td>SpiderMonkey</td>
+            <td>No basado en Chromium</td>
+        </tr>
+        <tr>
+            <td>Safari</td>
+            <td>Apple</td>
+            <td>WebKit</td>
+            <td>JavaScriptCore(Nitro)</td>
+            <td>No basado en Chromium</td>
+        </tr>
+        <tr>
+            <td>Edge</td>
+            <td>Microsoft</td>
+            <td>Blink</td>
+            <td>V8</td>
+            <td>Basado en Chromium</td>
+        </tr>
+        <tr>
+            <td>Opera</td>
+            <td>Opera Software</td>
+            <td>Blink</td>
+            <td>V8</td>
+            <td>Basado en Chromium</td>
+        </tr>
+    </table>
+    <div>
+    <p class="card">
+        Muchos comparten motor, por que al ser Chromium un proyecto de 
+        código abierto resulta más facil desarrollar un motor basado en
+        Chromium que crear uno desde 0. Actualmente los navegadores más conocidos 
+        que no lo usan son Firefox con Gecko y Safari con WebKit.
+    </br>
+        La principal implicación que tiene esto es que al tener algunas diferencias en la forma
+        de procesar el código se deben probar las aplicaciones en Chrome, Firefoz y Safari al menos
+        para asegurar que funcionan en las tres.
+    </p>
+    <p class="card">
+        if () de css solo funciona en navegadores como Chrome a partir de la versión 137 
+        mientras que en Safari y Firefox sigue sin funcionar.
+
+        18:37:https://caniuse.com/css-if
+    </p>
+    <p class="card">
+        Lo probaría primero en Chrome, Safari y Firefox, porque son navegadores que pueden
+        presentar diferencias debido a su motor de renderizado.
+    </p>
+</div>
+  <!-- Aquí va tu contenido -->
+
+  <!-- JS de Bootstrap (navbar que se pliega, modales, dropdowns...). Al final del body -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
