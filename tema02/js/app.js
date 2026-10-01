@@ -1,13 +1,14 @@
-document.getElementById("boton1").addEventListener("click", function() {
+
+function saludar(){
     alert("David Martínez Castro");
     console.log("Has pulsado el boton saludar.");
-});
-document.getElementById("boton2").addEventListener("click", function() {
+}
+
+function error(){
     console.error("Mensaje de error");
     console.log("Has pulsado el boton Simular un error.");
-});
-
-document.getElementById("boton3").addEventListener("click", function() {
+}
+function useragent(){
     alert(navigator.userAgent);    
-    console.log("Has pulsado el boton Que navegador soy.");
-});
+    console.log("Has pulsado el boton Que navegador soy:"+navigator.userAgent);
+}
