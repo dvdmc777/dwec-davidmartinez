@@ -12,8 +12,8 @@
   <!-- Tu CSS, SIEMPRE después del de Bootstrap -->
   <link href="css/estilos.css" rel="stylesheet">
 </head>
-<body>
-    <nav class="navbar container">
+<body class="container">
+    <nav class="navbar container row">
         <span>David Martínez Castro</span>
         <a href="interaccion.html">interaccion.html</a>
     </nav>
@@ -54,7 +54,7 @@
             <td>Basado en Chromium</td>
         </tr>
     </table>
-    <div>
+    <div class="row">
     <p class="card">
         Muchos comparten motor, por que al ser Chromium un proyecto de 
         código abierto resulta más facil desarrollar un motor basado en
@@ -65,13 +65,13 @@
         de procesar el código se deben probar las aplicaciones en Chrome, Firefoz y Safari al menos
         para asegurar que funcionan en las tres.
     </p>
-    <p class="card">
+    <p class="card col-6">
         if () de css solo funciona en navegadores como Chrome a partir de la versión 137 
         mientras que en Safari y Firefox sigue sin funcionar.
 
         18:37:https://caniuse.com/css-if
     </p>
-    <p class="card">
+    <p class="card col-6">
         Lo probaría primero en Chrome, Safari y Firefox, porque son navegadores que pueden
         presentar diferencias debido a su motor de renderizado.
     </p>
