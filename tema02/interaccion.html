@@ -1,8 +1,12 @@
+<!-- Indica que el documento es HTML5 -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Codificación de caracteres para que se vean bien tildes y ñ -->
   <meta charset="UTF-8">
+  <!-- Hace la página adaptable al ancho de la pantalla (responsive en móvil) -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Título que aparece en la pestaña del navegador -->
   <title>Interacción</title>
 
   <!-- CSS de Bootstrap -->
@@ -13,18 +17,24 @@
   
 </head>
 <body>
+    <!-- Barra de navegación: nombre del autor y enlace a index.html -->
     <nav class="navbar container">
         <span>David Martínez Castro</span>
         <a href="index.html">index.html</a>
     </nav>
   <!-- Aquí va tu contenido -->
+    <!-- Fila de Bootstrap con tres botones; cada uno ocupa 4 de las 12 columnas (un tercio) -->
     <div class="row">
+        <!-- Al hacer clic llama a la función saludar() definida en js/app.js -->
         <button id="boton1" onclick="saludar()" class="col-4">Saludar</button>
+        <!-- Al hacer clic llama a la función error() -->
         <button id="boton2" onclick="error()" class="col-4">Simular un error</button>
+        <!-- Al hacer clic llama a la función useragent() -->
         <button id="boton3" onclick="useragent()" class="col-4">Que navegador soy</button>
     </div>
   <!-- JS de Bootstrap (navbar que se pliega, modales, dropdowns...). Al final del body -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script propio con las funciones de los botones -->
   <script src="js/app.js"></script>
 </body>
 </html>

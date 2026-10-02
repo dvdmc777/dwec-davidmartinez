@@ -1,8 +1,12 @@
+<!-- Indica que el documento es HTML5 -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Codificación de caracteres para que se vean bien tildes y ñ -->
   <meta charset="UTF-8">
+  <!-- Hace la página adaptable al ancho de la pantalla (responsive en móvil) -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Título que aparece en la pestaña del navegador -->
   <title>Pagina 1</title>
 
   <!-- CSS de Bootstrap -->
@@ -11,12 +15,17 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
   <!-- Tu CSS, SIEMPRE después del de Bootstrap -->
 </head>
+<!-- La clase container centra todo el contenido de la página y le da un ancho máximo -->
 <body class="container">
+    <!-- Barra de navegación con borde: nombre del autor y enlace a interaccion.html -->
     <nav class="navbar border" >
         <span>David Martínez Castro</span>
         <a href="interaccion.html">interaccion.html</a>
     </nav>
+    <!-- Título grande de la página -->
     <h1 class="display-4">Navegadores Principales:</h1>
+    <!-- Tabla con filas alternadas en color (table-striped).
+         Columnas: navegador, empresa, motor de renderizado, motor de JavaScript y si usa Chromium -->
     <table class="table table-striped">
         <tr>
             <td>Chrome</td>
@@ -54,8 +63,12 @@
             <td>Basado en Chromium</td>
         </tr>
     </table>
+    <!-- Fila de Bootstrap que agrupa la pregunta y las tres tarjetas de texto -->
     <div class="row">
+    <!-- Pregunta que se responde en los párrafos de abajo -->
     <h3 class="display-6">¿Por qué se usan mas motores chromium?</h3>    
+    <!-- Tarjeta a ancho completo: explica por qué muchos navegadores usan Chromium
+         y qué implicación tiene a la hora de probar aplicaciones -->
     <p class="card">
         Muchos comparten motor, por que al ser Chromium un proyecto de 
         código abierto resulta más facil desarrollar un motor basado en
@@ -67,6 +80,7 @@
         para asegurar que funcionan en las tres.
     </p>
     
+    <!-- Tarjeta de media fila (col-6): compatibilidad de if() en CSS, con enlace a caniuse.com -->
     <p class="card col-6">
         
         if () de css solo funciona en Chrome a partir de la versión 137, Opera a partir de la 135 entre otros basados en Chromium. 
@@ -75,6 +89,7 @@
         18:37.
         <a href="https://caniuse.com/css-if">if()css</a>
     </p>
+    <!-- Tarjeta de media fila (col-6): en qué navegadores probar primero y por qué -->
     <p class="card col-6">
         Lo probaría primero en Chrome, Safari y Firefox, porque son navegadores que pueden
         presentar diferencias debido a su motor de renderizado.
