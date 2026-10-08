@@ -195,6 +195,15 @@ console.log("siete =", siete, "→", typeof siete);
         <span class="small text-body-secondary ms-2">El resultado sale en la consola (F12).</span>
       </div>
     </section>
+
+
+
+
+
+
+
+
+
     <section class="card mb-4 shadow-sm">
 
       <!-- 1) Título del ejercicio -->
@@ -257,7 +266,7 @@ console.log('null === undefined →', null === undefined);   //espero false
         </div>
 
         <!-- 4) Tu explicación -->
-        <p class="small mb-0"><strong>El caso de null:</strong>Cuando se hace una operación con + con un número y cadena, se concatenan, con el resto de operadores trata la cadena como nun número.</p>
+        <p class="small mb-0"><strong>El caso de null:</strong> Cuando se hace una operación con + con un número y cadena, se concatenan, con el resto de operadores trata la cadena como nun número.</p>
       </div>
 
       <!-- 5) El botón. onclick="ejercicio1()" hace que, al pulsarlo, se ejecute la función ejercicio1() de js/app.js.
@@ -265,6 +274,60 @@ console.log('null === undefined →', null === undefined);   //espero false
       <div class="card-footer">
         <button type="button" class="btn btn-primary" onclick="ejercicio3()">
           <i class="bi bi-play-fill"></i> Ejecutar ejercicio 3
+        </button>
+        <span class="small text-body-secondary ms-2">El resultado sale en la consola (F12).</span>
+      </div>
+    </section>
+
+
+
+
+    <section class="card mb-4 shadow-sm">
+
+      <!-- 1) Título del ejercicio -->
+      <div class="card-header d-flex align-items-center gap-2">
+        <span class="badge text-bg-primary">Ejercicio 4</span>
+        <h2 class="h5 mb-0">Ficha con plantillas</h2>
+      </div>
+
+      <div class="card-body">
+
+        <!-- 2) El código: cuando termines, copia aquí tu función ejercicio1() de js/app.js.
+                Si tu código lleva los signos < o >, escríbelos como &lt; y &gt; -->
+        <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio4() {
+console.log("--- Ejercicio 4 · Tu ficha con plantillas de cadena ---");
+
+// Tus datos, con const
+const nombre = "David";
+const ciclo = "Desarrollo de aplicaciones web";
+const aficion = "jugar videojuegos";
+let horasestudio = 72;
+// Un dato que cambia, con let
+// TODO: por ejemplo, las horas que has estudiado esta semana. Después súmale algo con +=.
+horasestudio++;
+// La ficha con plantilla de cadena: backticks (`) y ${ }
+const ficha = `Soy ${nombre}, estudio ${ciclo}, me gusta ${aficion} y esta semana he estudiado ${horasestudio} horas.`;
+// TODO: completa la ficha con todos tus datos y muéstrala con alert() y en la consola.
+alert(ficha);
+console.log(ficha);
+// TODO: escribe la misma ficha concatenando con + en una constante fichaConMas y muéstrala en la consola
+const fichaConMas = "Soy " + nombre + ", estudio " + ciclo + ", me gusta " + aficion + " y esta semana he estudiado " + horasestudio + " horas.";
+// TODO: compara las dos con === y muestra el resultado en la consola: tiene que salir true.
+console.log(fichaConMas);
+console.log(ficha === fichaConMas);
+}</code></pre>
+
+      <div class="alert alert-info">Uncaught TypeError: invalid assignment to const 'sdgsg'
+    <anonymous> debugger eval code:1</div>
+        <!-- 4) Tu explicación -->
+        <p class="small mb-0"><strong>Explicación: </strong> Es un error causado por intentar cambiar el valor de una constante, que al ser cosntante no se puede cambiar.</p>
+      </div>
+
+      <!-- 5) El botón. onclick="ejercicio1()" hace que, al pulsarlo, se ejecute la función ejercicio1() de js/app.js.
+              Cómo funciona lo veremos más adelante, con los eventos. De momento, cópialo tal cual y cambia solo el número. -->
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" onclick="ejercicio4()">
+          <i class="bi bi-play-fill"></i> Ejecutar ejercicio 4
         </button>
         <span class="small text-body-secondary ms-2">El resultado sale en la consola (F12).</span>
       </div>
