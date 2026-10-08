@@ -55,4 +55,5 @@
 ## Uso de IA
 
 [Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
-ChatGPT: explicacion typeof null,
+ChatGPT: explicacion typeof null
+Claude: console logs,

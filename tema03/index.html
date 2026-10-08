@@ -129,7 +129,73 @@
                Ejercicio 4 → tu ficha, y el error de la const dentro de un <div class="alert alert-danger">
            · el botón: onclick="ejercicio2()", onclick="ejercicio3()"…
          ============================================================ -->
+    <section class="card mb-4 shadow-sm">
 
+      <!-- 1) Título del ejercicio -->
+      <div class="card-header d-flex align-items-center gap-2">
+        <span class="badge text-bg-primary">Ejercicio 2</span>
+        <h2 class="h5 mb-0">Conversiones explícitas</h2>
+      </div>
+
+      <div class="card-body">
+
+        <!-- 2) El código: cuando termines, copia aquí tu función ejercicio1() de js/app.js.
+                Si tu código lleva los signos < o >, escríbelos como &lt; y &gt; -->
+        <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio2() {
+          console.log("--- Ejercicio 2 · Conversiones explicitas ---");
+
+          numero = 1;
+          estring = "string";
+          booleano = true;
+          nulo = null;
+          indefinida = undefined;
+          bigint = 10n;
+          let variable = 0;
+          // Ejemplo: una variable y su typeof en la consola
+          const edad = 20;   // number
+          console.log("edad =", edad, "→", typeof edad);
+          console.log("numero =", numero, "→", typeof numero);
+          console.log("estring =", estring, "→", typeof estring);
+          console.log("booleano =", booleano, "→", typeof booleano);
+          console.log("nulo =", nulo, "→", typeof nulo);
+          console.log("indefinida =", indefinida, "→", typeof indefinida);
+          console.log("bigint =", bigint, "→", typeof bigint);
+          console.log("variable =", variable, "→", typeof variable);
+        }</code></pre>
+
+        <!-- 3) La tabla «Espero / Sale», rellenada a mano.
+                Una fila por variable. Si te equivocas, añade en la columna «Sale» el badge:
+                <span class="badge text-bg-danger">Fallé</span> -->
+        <div class="table-responsive">
+          <table class="table table-sm table-striped align-middle mb-2">
+            <thead class="table-primary">
+              <tr><th scope="col">Variable</th><th scope="col">Valor</th><th scope="col">Espero</th><th scope="col">Sale</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">uno</th><td><code>Number("123")</code></td><td><code>number</code></td><td><code>number</code></td></tr>
+              <tr><th scope="row">dos</th><td><code>Number("12abc")</code></td><td><code>number</code></td><td><code>number</code></td></tr>
+              <tr><th scope="row">tres</th><td><code>Number("")</code></td><td><code class="badge bg-danger">null</code></td><td><code>number</code></td></tr>
+              <tr><th scope="row">cuatro</th><td><code>Number(true)</code></td><td><code class="badge bg-danger">null</code></td><td><code>number</code></td></tr>
+              <tr><th scope="row">cinco</th><td><code>Boolean(0)</code></td><td><code>boolean</code></td><td><code>boolean</code></td></tr>
+              <tr><th scope="row">seis</th><td><code>Boolean("texto")</code></td><td><code>boolean</code></td><td><code>boolean</code></td></tr>
+              <tr><th scope="row">siete</th><td><code>Boolean("")</code></td><td><code>boolean</code></td><td><code>boolean</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 4) Tu explicación -->
+        
+      </div>
+
+      <!-- 5) El botón. onclick="ejercicio1()" hace que, al pulsarlo, se ejecute la función ejercicio1() de js/app.js.
+              Cómo funciona lo veremos más adelante, con los eventos. De momento, cópialo tal cual y cambia solo el número. -->
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" onclick="ejercicio2()">
+          <i class="bi bi-play-fill"></i> Ejecutar ejercicio 2
+        </button>
+        <span class="small text-body-secondary ms-2">El resultado sale en la consola (F12).</span>
+      </div>
+    </section>
   </main>
 
   <footer class="bg-body-tertiary border-top py-3">
