@@ -15,10 +15,23 @@ console.log("app.js cargado: pulsa «Ejecutar» en cada ejercicio");
 // Ejercicio 1 · Variables y typeof
 function ejercicio1() {
   console.log("--- Ejercicio 1 · Variables y typeof ---");
-
+  numero = 1;
+  estring = "string";
+  booleano = true;
+  nulo = null;
+  indefinida = undefined;
+  bigint = 10n;
+  let variable = 0;
   // Ejemplo: una variable y su typeof en la consola
   const edad = 20;   // number
   console.log("edad =", edad, "→", typeof edad);
+  console.log("numero =", numero, "→", typeof numero);
+  console.log("estring =", estring, "→", typeof estring);
+  console.log("booleano =", booleano, "→", typeof booleano);
+  console.log("nulo =", nulo, "→", typeof nulo);
+  console.log("indefinida =", indefinida, "→", typeof indefinida);
+  console.log("bigint =", bigint, "→", typeof bigint);
+  console.log("variable =", variable, "→", typeof variable);
 
   // TODO: declara una variable de cada tipo que falta: string, boolean, null, undefined y bigint (como 10n).
   //       const si no va a cambiar; let para al menos una a la que des valor más tarde.

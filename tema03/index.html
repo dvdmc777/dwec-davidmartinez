@@ -62,10 +62,23 @@
         <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio1() {
   console.log("--- Ejercicio 1 · Variables y typeof ---");
 
+  numero = 1;
+  estring = "string";
+  booleano = true;
+  nulo = null;
+  indefinida = undefined;
+  bigint = 10n;
+  let variable = 0;
+  // Ejemplo: una variable y su typeof en la consola
   const edad = 20;   // number
   console.log("edad =", edad, "→", typeof edad);
-
-  [aquí va el resto de tu código]
+  console.log("numero =", numero, "→", typeof numero);
+  console.log("estring =", estring, "→", typeof estring);
+  console.log("booleano =", booleano, "→", typeof booleano);
+  console.log("nulo =", nulo, "→", typeof nulo);
+  console.log("indefinida =", indefinida, "→", typeof indefinida);
+  console.log("bigint =", bigint, "→", typeof bigint);
+  console.log("variable =", variable, "→", typeof variable);
 }</code></pre>
 
         <!-- 3) La tabla «Espero / Sale», rellenada a mano.
@@ -78,13 +91,20 @@
             </thead>
             <tbody>
               <tr><th scope="row">edad</th><td><code>20</code></td><td><code>number</code></td><td><code>number</code></td></tr>
-              <tr><th scope="row">[variable]</th><td><code>[valor]</code></td><td><code>[lo que esperas]</code></td><td><code>[lo que sale]</code></td></tr>
+              <tr><th scope="row">numero</th><td><code>1</code></td><td><code>number</code></td><td><code>number<code></td></tr>
+              <tr><th scope="row">estring</th><td><code>estring</code></td><td><code>string</code></td><td><code>string</code></td></tr>
+              <tr><th scope="row">booleano</th><td><code>true</code></td><td><code>boolean</code></td><td><code>boolean</code></td></tr>
+              <tr><th scope="row">nulo</th><td><code>null</code></td><td><code>object</code></td><td><code>object</code></td></tr>
+              <tr><th scope="row">indefinida</th><td><code>undefined</code></td><td><code>undefined</code></td><td><code>undefined</code></td></tr>
+              <tr><th scope="row">bigint</th><td><code>10n</code></td><td><code>bigint</code></td><td><code>bigint</code></td></tr>
+              <tr><th scope="row">variable</th><td><code>0</code></td><td><code>number</code></td><td><code>number</code></td></tr>
+              
             </tbody>
           </table>
         </div>
 
         <!-- 4) Tu explicación -->
-        <p class="small mb-0"><strong>El caso de null:</strong> [explica en una línea qué pasa con typeof null]</p>
+        <p class="small mb-0"><strong>El caso de null:</strong>Es un error histórico de js que se mantiene asi por cuestiones de compatibilidad</p>
       </div>
 
       <!-- 5) El botón. onclick="ejercicio1()" hace que, al pulsarlo, se ejecute la función ejercicio1() de js/app.js.
