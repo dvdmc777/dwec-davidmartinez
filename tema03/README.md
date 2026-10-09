@@ -48,5 +48,5 @@ Luego los booleanos me parecieron bastante intuitivos porque al ser o 0 o 1 es m
 - [Claude](https://claude.ai)
 ## Uso de IA
 
-[Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
+
 ChatGPT, Claude: explicacion typeof null, explicación cuando mandan cadenas o no, modificación de las tablas(rellenarlas partiendo con el código de js) y console logs (crearlos con el mismo formato a partir de las variables que le pasé).
