@@ -22,7 +22,6 @@ function ejercicio1() {
   indefinida = undefined;
   bigint = 10n;
   let variable;
-  variable=0;
   const edad = 20;   
   console.log("edad =", edad, "→", typeof edad);
   console.log("numero =", numero, "→", typeof numero);
@@ -32,7 +31,7 @@ function ejercicio1() {
   console.log("indefinida =", indefinida, "→", typeof indefinida);
   console.log("bigint =", bigint, "→", typeof bigint);
   console.log("variable =", variable, "→", typeof variable);
-  variable=0;
+  variable=2;
   console.log("variable =", variable, "→", typeof variable);
 }
 
@@ -53,8 +52,8 @@ function ejercicio2() {
   console.log("a =", a, "→", typeof a); //espero string
   console.log("uno =", uno, "→", typeof uno);       // espero number
   console.log("dos =", dos, "→", typeof dos);       // espero number
-  console.log("tres =", tres, "→", typeof tres);     // espero number
-  console.log("cuatro =", cuatro, "→", typeof cuatro); // espero number
+  console.log("tres =", tres, "→", typeof tres);     // espero null
+  console.log("cuatro =", cuatro, "→", typeof cuatro); // espero null
   console.log("cinco =", cinco, "→", typeof cinco);   // espero boolean
   console.log("seis =", seis, "→", typeof seis);     // espero boolean
   console.log("siete =", siete, "→", typeof siete);   // espero boolean
@@ -88,7 +87,8 @@ function ejercicio4() {
   const ciclo = "Desarrollo de aplicaciones web";
   const curso = "2º";
   const aficion = "jugar videojuegos";
-  let horasestudio = 72;horasestudio += horasestudio;
+  let horasestudio = 72;
+  horasestudio += 1;
   const ficha = `Soy ${nombre}, estudio ${ciclo}, estoy en ${curso} y me gusta ${aficion} y esta semana he estudiado ${horasestudio} horas.`;
   alert(ficha);
   console.log(ficha);

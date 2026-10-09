@@ -1,16 +1,8 @@
 # Tarea 3 · Variables, tipos y conversiones
 
-**Autor:** [Tu nombre y apellidos] · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
+**Autor:** David Martínez Castro · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
-> **Plantilla de la tarea 3.** Cómo usarla:
->
-> 1. Copia esta carpeta en tu repositorio de DWEC y cámbiale el nombre a `tema03`.
-> 2. `index.html` trae la card del ejercicio 1 como modelo: cópiala para los ejercicios 2, 3 y 4.
-> 3. `js/app.js` trae una función por ejercicio: escribe tu código donde pone `TODO`.
-> 4. Sustituye las imágenes de `capturas/` por las tuyas, **con el mismo nombre**.
-> 5. Todo lo que va entre [corchetes] es un hueco: cámbialo por lo tuyo. Al terminar, borra este aviso.
-
-[Una o dos líneas: qué hay en esta carpeta y cómo se ve. Por ejemplo: abrir la carpeta en VS Code, pulsar **Go Live**, abrir la consola con F12 y pulsar «Ejecutar» en cada ejercicio.]
+En esta carpeta está el html, el js, capturas y readme, para ver la página se puede hacer mediante live server o abriendo el archivo. Para los console log con f12 despueés de pulsar ejecutar en el ejercicio correspondiente.
 
 ## Capturas
 
@@ -18,41 +10,43 @@
 
 <img src="capturas/a-pagina.png" alt="La página entera con mi nombre en la navbar" width="600">
 
-[Qué se ve: tu nombre en la navbar, las cuatro cards y los fallos de predicción marcados.]
+Se ve el navbar con mi nombre, el nombre de la tarea y abreviación de asignatura, cabecera con información de la práctica y el comienzo del primer ejercicio.
 
 ### b) Consola del ejercicio 1
 
 ![Consola del ejercicio 1](capturas/b-consola-ej1.png)
 
-[Qué se ve, en una o dos líneas.]
+Se ven los console logs y la tabla de lo que espero / lo que sale.
 
 ### c) Consola del ejercicio 2
 
 ![Consola del ejercicio 2](capturas/c-consola-ej2.png)
 
-[Qué se ve, en una o dos líneas.]
+Se ve la consola con los typeof de las variables de js y la tabla y código del ejercicio 2.
 
 ### d) Consola del ejercicio 3
 
 ![Consola del ejercicio 3](capturas/d-consola-ej3.png)
 
-[Qué se ve, en una o dos líneas.]
+Se ve el resultado de las distintas operaciones realizadas en js junto con la tabla.
 
 ### e) Consola del ejercicio 4, con el error de la const
 
 ![Consola del ejercicio 4 con el error de la const](capturas/e-consola-ej4.png)
 
-[Qué se ve, en una o dos líneas.]
+Se ve el console log de la misma cadena hecha de dos maneras y el resultado de su comparación con ===.
 
 ## Reflexión
 
-[De 5 a 8 líneas: ¿qué conversiones te resultaron más intuitivas y cuáles te sorprendieron? Pon ejemplos concretos de tus tablas.]
+Me parecieron las más intuitivas las que empiezan con string como "5" + 2, ya que esperaba que saliese 52, pero en cambio las que empiezan con un número y se le añade un string como en el caso de 5 + "2", pensaba que se trataría el string como un número y me sorprendió mucho.
+
+Luego los booleanos me parecieron bastante intuitivos porque al ser o 0 o 1 es más intuitivo a excepción del false + 1 que también me pareció sorprendente.
 
 ## Fuentes
 
-- [Título de la página](https://enlace-a-la-fuente)
-
+- [ChatGPT](https://chatgpt.com)https://claude.ai
+- [Claude](https://claude.ai)
 ## Uso de IA
 
 [Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
-ChatGPT, Claude: explicacion typeof null, explicación cuando mandan cadenas o no, modificación de las tablas y console log
+ChatGPT, Claude: explicacion typeof null, explicación cuando mandan cadenas o no, modificación de las tablas(rellenarlas partiendo con el código de js) y console logs (crearlos con el mismo formato a partir de las variables que le pasé).
