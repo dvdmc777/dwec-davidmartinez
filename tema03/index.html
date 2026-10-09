@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Cambia [Tu nombre] por tu nombre -->
-  <title>Variables, tipos y conversiones · [Tu nombre]</title>
+  <title>Variables, tipos y conversiones · David Martínez Castro</title>
 
   <!-- CSS de Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,15 +11,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
 <body>
-
-  <!--
-    PLANTILLA DE LA TAREA 3
-    · Todo lo que va entre [corchetes] es un hueco: sustitúyelo por lo tuyo.
-    · La card del ejercicio 1 es el modelo. Las de los ejercicios 2, 3 y 4 las haces tú copiándola (mira el final).
-    · El JavaScript va en js/app.js, dentro de la función de cada ejercicio.
-  -->
-
-  <!-- NAVBAR con tu nombre -->
   <nav class="navbar bg-primary" data-bs-theme="dark">
     <div class="container">
       <span class="navbar-brand"><i class="bi bi-person-circle"></i> David Martínez Castro</span>
@@ -60,25 +50,26 @@
         <!-- 2) El código: cuando termines, copia aquí tu función ejercicio1() de js/app.js.
                 Si tu código lleva los signos < o >, escríbelos como &lt; y &gt; -->
         <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio1() {
-console.log("--- Ejercicio 1 · Variables y typeof ---");
-
-numero = 1;
-estring = "string";
-booleano = true;
-nulo = null;
-indefinida = undefined;
-bigint = 10n;
-let variable = 0;
-// Ejemplo: una variable y su typeof en la consola
-const edad = 20;   // number
-console.log("edad =", edad, "→", typeof edad);
-console.log("numero =", numero, "→", typeof numero);
-console.log("estring =", estring, "→", typeof estring);
-console.log("booleano =", booleano, "→", typeof booleano);
-console.log("nulo =", nulo, "→", typeof nulo);
-console.log("indefinida =", indefinida, "→", typeof indefinida);
-console.log("bigint =", bigint, "→", typeof bigint);
-console.log("variable =", variable, "→", typeof variable);
+  console.log("--- Ejercicio 1 · Variables y typeof ---");
+  numero = 1;
+  estring = "string";
+  booleano = true;
+  nulo = null;
+  indefinida = undefined;
+  bigint = 10n;
+  let variable;
+  variable=0;
+  const edad = 20;   
+  console.log("edad =", edad, "→", typeof edad);
+  console.log("numero =", numero, "→", typeof numero);
+  console.log("estring =", estring, "→", typeof estring);
+  console.log("booleano =", booleano, "→", typeof booleano);
+  console.log("nulo =", nulo, "→", typeof nulo);
+  console.log("indefinida =", indefinida, "→", typeof indefinida);
+  console.log("bigint =", bigint, "→", typeof bigint);
+  console.log("variable =", variable, "→", typeof variable);
+  variable=0;
+  console.log("variable =", variable, "→", typeof variable);
 }</code></pre>
 
         <!-- 3) La tabla «Espero / Sale», rellenada a mano.
@@ -104,7 +95,7 @@ console.log("variable =", variable, "→", typeof variable);
         </div>
 
         <!-- 4) Tu explicación -->
-        <p class="small mb-0"><strong>El caso de null:</strong>Es un error histórico de js que se mantiene asi por cuestiones de compatibilidad</p>
+        <p class="small mb-0"><strong>El caso de null:</strong> Es un error histórico de js que se mantiene asi por cuestiones de compatibilidad</p>
       </div>
 
       <!-- 5) El botón. onclick="ejercicio1()" hace que, al pulsarlo, se ejecute la función ejercicio1() de js/app.js.
@@ -142,25 +133,25 @@ console.log("variable =", variable, "→", typeof variable);
         <!-- 2) El código: cuando termines, copia aquí tu función ejercicio1() de js/app.js.
                 Si tu código lleva los signos < o >, escríbelos como &lt; y &gt; -->
         <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio2() {
-console.log("--- Ejercicio 2 · Conversiones explícitas ---"); 
-uno = Number("123"); 
-dos =Number("12abc"); 
-tres =Number("");
-cuatro =Number(true); 
-cinco =Boolean(0); 
-seis=Boolean("texto");
-siete= Boolean("");
-// Ejemplo: una conversión, tu predicción y el resultado con su tipo
-const a = String(123);   // espero [tu predicción]
-console.log("a =", a, "→", typeof a);
-console.log("uno =", uno, "→", typeof uno);
-console.log("dos =", dos, "→", typeof dos);
-console.log("tres =", tres, "→", typeof tres);
-console.log("cuatro =", cuatro, "→", typeof cuatro);
-console.log("cinco =", cinco, "→", typeof cinco);
-console.log("seis =", seis, "→", typeof seis);
-console.log("siete =", siete, "→", typeof siete);
-        }</code></pre>
+  console.log("--- Ejercicio 2 · Conversiones explícitas ---"); 
+  uno = Number("123"); 
+  dos =Number("12abc"); 
+  tres =Number("");
+  cuatro =Number(true); 
+  cinco =Boolean(0); 
+  seis=Boolean("texto");
+  siete= Boolean("");
+
+  const a = String(123);   // espero string
+  console.log("a =", a, "→", typeof a); //espero string
+  console.log("uno =", uno, "→", typeof uno);       // espero number
+  console.log("dos =", dos, "→", typeof dos);       // espero number
+  console.log("tres =", tres, "→", typeof tres);     // espero number
+  console.log("cuatro =", cuatro, "→", typeof cuatro); // espero number
+  console.log("cinco =", cinco, "→", typeof cinco);   // espero boolean
+  console.log("seis =", seis, "→", typeof seis);     // espero boolean
+  console.log("siete =", siete, "→", typeof siete);   // espero boolean
+}</code></pre>
 
         <!-- 3) La tabla «Espero / Sale», rellenada a mano.
                 Una fila por variable. Si te equivocas, añade en la columna «Sale» el badge:
@@ -171,6 +162,7 @@ console.log("siete =", siete, "→", typeof siete);
               <tr><th scope="col">Conversión</th><th scope="col">Espero</th><th scope="col">Sale</th></tr>
             </thead>
             <tbody>
+              <tr><td><code>String("123")</code></td><td><code>string</code></td><td><code>string</code></td></tr>
               <tr><td><code>Number("123")</code></td><td><code>number</code></td><td><code>number</code></td></tr>
               <tr><td><code>Number("12abc")</code></td><td><code>number</code></td><td><code>number</code></td></tr>
               <tr><td><code>Number("")</code></td><td><code class="badge bg-danger">null</code></td><td><code>number</code></td></tr>
@@ -217,26 +209,19 @@ console.log("siete =", siete, "→", typeof siete);
         <!-- 2) El código: cuando termines, copia aquí tu función ejercicio1() de js/app.js.
                 Si tu código lleva los signos < o >, escríbelos como &lt; y &gt; -->
         <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio3() {
-console.log("--- Ejercicio 3 · Coerción y comparaciones ---");
-
-// Ejemplo: una expresión que mezcla tipos
-console.log('"5" - 2 →', "5" - 2);   // espero [tu predicción]
-console.log()
-// TODO: cinco expresiones más que mezclen tipos (al menos dos inventadas por ti), cada una con su «espero …».
-
-console.log('5 == "5" →', 5 == "5");     // espero true
-console.log('5 === "5" →', 5 === "5");   // espero false
-console.log('"5" - 1 →', "5" - 1);  // espero 4
-console.log('"5" + 2 →', "5" + 2); // espero 52
-console.log('5 + "2" →', 5 + "2"); // espero 7
-console.log('5 + true →', 5 + true); // espero 6
-console.log('false + 1 →', false + 1); // espero true
-console.log('5 == "5" →', 5 == "5");   //espero true
-console.log('5 === "5" →', 5 === "5");   //espero false
-console.log('0 == false →', 0 == false);   //espero true
-console.log('0 === false →', 0 === false);   //espero false
-console.log('null == undefined →', null == undefined);   //espero true
-console.log('null === undefined →', null === undefined);   //espero false
+  console.log("--- Ejercicio 3 · Coerción y comparaciones ---");
+  
+  console.log('"5" - 1 →', "5" - 1);  // espero 4
+  console.log('"5" + 2 →', "5" + 2); // espero 52
+  console.log('5 + "2" →', 5 + "2"); // espero 7
+  console.log('5 + true →', 5 + true); // espero 6
+  console.log('false + 1 →', false + 1); // espero true
+  console.log('5 == "5" →', 5 == "5");   //espero true
+  console.log('5 === "5" →', 5 === "5");   //espero false
+  console.log('0 == false →', 0 == false);   //espero true
+  console.log('0 === false →', 0 === false);   //espero false
+  console.log('null == undefined →', null == undefined);   //espero true
+  console.log('null === undefined →', null === undefined);   //espero false
 }</code></pre>
 
         <!-- 3) La tabla «Espero / Sale», rellenada a mano.
@@ -248,8 +233,6 @@ console.log('null === undefined →', null === undefined);   //espero false
               <tr><th scope="col">Expresión</th><th scope="col">Espero</th><th scope="col">Sale</th></tr>
             </thead>
             <tbody>
-              <tr><td><code>5 == "5"</code></td><td><code>true</code></td><td><code>true</code></td></tr>
-              <tr><td><code>5 === "5"</code></td><td><code>false</code></td><td><code>false</code></td></tr>
               <tr><td><code>"5" - 1</code></td><td><code>4</code></td><td><code>4</code></td></tr>
               <tr><td><code>"5" + 2</code></td><td><code>52</code></td><td><code>52</code></td></tr>
               <tr><td><code>5 + "2"</code></td><td><code class="badge text-bg-danger">7</code></td><td><code>52</code></td></tr>
@@ -266,7 +249,7 @@ console.log('null === undefined →', null === undefined);   //espero false
         </div>
 
         <!-- 4) Tu explicación -->
-        <p class="small mb-0"><strong>El caso de null:</strong> Cuando se hace una operación con + con un número y cadena, se concatenan, con el resto de operadores trata la cadena como nun número.</p>
+        <p class="small mb-0"><strong>Numeros y cadenas:</strong> Cuando se hace una operación con + con un número y cadena, se concatenan, con el resto de operadores trata la cadena como un número.</p>
       </div>
 
       <!-- 5) El botón. onclick="ejercicio1()" hace que, al pulsarlo, se ejecute la función ejercicio1() de js/app.js.
@@ -295,26 +278,20 @@ console.log('null === undefined →', null === undefined);   //espero false
         <!-- 2) El código: cuando termines, copia aquí tu función ejercicio1() de js/app.js.
                 Si tu código lleva los signos < o >, escríbelos como &lt; y &gt; -->
         <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio4() {
-console.log("--- Ejercicio 4 · Tu ficha con plantillas de cadena ---");
+  console.log("--- Ejercicio 4 · Tu ficha con plantillas de cadena ---");
 
-// Tus datos, con const
-const nombre = "David";
-const ciclo = "Desarrollo de aplicaciones web";
-const aficion = "jugar videojuegos";
-let horasestudio = 72;
-// Un dato que cambia, con let
-// TODO: por ejemplo, las horas que has estudiado esta semana. Después súmale algo con +=.
-horasestudio++;
-// La ficha con plantilla de cadena: backticks (`) y ${ }
-const ficha = `Soy ${nombre}, estudio ${ciclo}, me gusta ${aficion} y esta semana he estudiado ${horasestudio} horas.`;
-// TODO: completa la ficha con todos tus datos y muéstrala con alert() y en la consola.
-alert(ficha);
-console.log(ficha);
-// TODO: escribe la misma ficha concatenando con + en una constante fichaConMas y muéstrala en la consola
-const fichaConMas = "Soy " + nombre + ", estudio " + ciclo + ", me gusta " + aficion + " y esta semana he estudiado " + horasestudio + " horas.";
-// TODO: compara las dos con === y muestra el resultado en la consola: tiene que salir true.
-console.log(fichaConMas);
-console.log(ficha === fichaConMas);
+
+  const nombre = "David";
+  const ciclo = "Desarrollo de aplicaciones web";
+  const curso = "2º";
+  const aficion = "jugar videojuegos";
+  let horasestudio = 72;horasestudio += horasestudio;
+  const ficha = `Soy ${nombre}, estudio ${ciclo}, estoy en ${curso} y me gusta ${aficion} y esta semana he estudiado ${horasestudio} horas.`;
+  alert(ficha);
+  console.log(ficha);
+  const fichaConMas = "Soy " + nombre + ", estudio " + ciclo + ", estoy en "+curso+" y me gusta " + aficion + " y esta semana he estudiado " + horasestudio + " horas.";
+  console.log(fichaConMas);
+  console.log(ficha === fichaConMas);
 }</code></pre>
 
       <div class="alert alert-info">Uncaught TypeError: invalid assignment to const 'sdgsg'

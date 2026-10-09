@@ -1,5 +1,5 @@
 /*
-  Tarea 3 · DWEC · [Tu nombre y apellidos]
+  Tarea 3 · DWEC · David Martínez Castro
   Variables, tipos y conversiones.
 
   Cómo usar esta plantilla:
@@ -21,9 +21,9 @@ function ejercicio1() {
   nulo = null;
   indefinida = undefined;
   bigint = 10n;
-  let variable = 0;
-  // Ejemplo: una variable y su typeof en la consola
-  const edad = 20;   // number
+  let variable;
+  variable=0;
+  const edad = 20;   
   console.log("edad =", edad, "→", typeof edad);
   console.log("numero =", numero, "→", typeof numero);
   console.log("estring =", estring, "→", typeof estring);
@@ -32,11 +32,8 @@ function ejercicio1() {
   console.log("indefinida =", indefinida, "→", typeof indefinida);
   console.log("bigint =", bigint, "→", typeof bigint);
   console.log("variable =", variable, "→", typeof variable);
-
-  // TODO: declara una variable de cada tipo que falta: string, boolean, null, undefined y bigint (como 10n).
-  //       const si no va a cambiar; let para al menos una a la que des valor más tarde.
-  // TODO: muestra en la consola el valor y el typeof de cada una, como en el ejemplo.
-  // TODO: da valor a tu variable let y vuelve a mostrar su typeof.
+  variable=0;
+  console.log("variable =", variable, "→", typeof variable);
 }
 
 
@@ -51,21 +48,16 @@ function ejercicio2() {
   cinco =Boolean(0); 
   seis=Boolean("texto");
   siete= Boolean("");
-  // Ejemplo: una conversión, tu predicción y el resultado con su tipo
-  const a = String(123);   // espero [tu predicción]
-  console.log("a =", a, "→", typeof a);
-  console.log("uno =", uno, "→", typeof uno);
-  console.log("dos =", dos, "→", typeof dos);
-  console.log("tres =", tres, "→", typeof tres);
-  console.log("cuatro =", cuatro, "→", typeof cuatro);
-  console.log("cinco =", cinco, "→", typeof cinco);
-  console.log("seis =", seis, "→", typeof seis);
-  console.log("siete =", siete, "→", typeof siete);
 
-  // TODO: el resto de conversiones obligatorias, cada una con su «espero …»:
-  //       Number("123"), Number("12abc"), Number(""), Number(true),
-  //       Boolean(0), Boolean("texto") y Boolean("").
-  // TODO: muestra en la consola el resultado y el typeof de cada una.
+  const a = String(123);   // espero string
+  console.log("a =", a, "→", typeof a); //espero string
+  console.log("uno =", uno, "→", typeof uno);       // espero number
+  console.log("dos =", dos, "→", typeof dos);       // espero number
+  console.log("tres =", tres, "→", typeof tres);     // espero number
+  console.log("cuatro =", cuatro, "→", typeof cuatro); // espero number
+  console.log("cinco =", cinco, "→", typeof cinco);   // espero boolean
+  console.log("seis =", seis, "→", typeof seis);     // espero boolean
+  console.log("siete =", siete, "→", typeof siete);   // espero boolean
 }
 
 
@@ -73,13 +65,6 @@ function ejercicio2() {
 function ejercicio3() {
   console.log("--- Ejercicio 3 · Coerción y comparaciones ---");
   
-  // Ejemplo: una expresión que mezcla tipos
-  console.log('"5" - 2 →', "5" - 2);   // espero [tu predicción]
-  console.log()
-  // TODO: cinco expresiones más que mezclen tipos (al menos dos inventadas por ti), cada una con su «espero …».
-
-  console.log('5 == "5" →', 5 == "5");     // espero true
-  console.log('5 === "5" →', 5 === "5");   // espero false
   console.log('"5" - 1 →', "5" - 1);  // espero 4
   console.log('"5" + 2 →', "5" + 2); // espero 52
   console.log('5 + "2" →', 5 + "2"); // espero 7
@@ -98,24 +83,16 @@ function ejercicio3() {
 function ejercicio4() {
   console.log("--- Ejercicio 4 · Tu ficha con plantillas de cadena ---");
 
-  // Tus datos, con const
+
   const nombre = "David";
   const ciclo = "Desarrollo de aplicaciones web";
+  const curso = "2º";
   const aficion = "jugar videojuegos";
-  // TODO: ciclo, curso y una afición, también con const.
-  let horasestudio = 72;
-  // Un dato que cambia, con let
-  // TODO: por ejemplo, las horas que has estudiado esta semana. Después súmale algo con +=.
-  horasestudio++;
-  // La ficha con plantilla de cadena: backticks (`) y ${ }
-  const ficha = `Soy ${nombre}, estudio ${ciclo}, me gusta ${aficion} y esta semana he estudiado ${horasestudio} horas.`;
-  // TODO: completa la ficha con todos tus datos y muéstrala con alert() y en la consola.
+  let horasestudio = 72;horasestudio += horasestudio;
+  const ficha = `Soy ${nombre}, estudio ${ciclo}, estoy en ${curso} y me gusta ${aficion} y esta semana he estudiado ${horasestudio} horas.`;
   alert(ficha);
   console.log(ficha);
-  // TODO: escribe la misma ficha concatenando con + en una constante fichaConMas y muéstrala en la consola
-  const fichaConMas = "Soy " + nombre + ", estudio " + ciclo + ", me gusta " + aficion + " y esta semana he estudiado " + horasestudio + " horas.";
-  // TODO: compara las dos con === y muestra el resultado en la consola: tiene que salir true.
+  const fichaConMas = "Soy " + nombre + ", estudio " + ciclo + ", estoy en "+curso+" y me gusta " + aficion + " y esta semana he estudiado " + horasestudio + " horas.";
   console.log(fichaConMas);
   console.log(ficha === fichaConMas);
-  // Recuerda: el error de dar otro valor a una const se provoca en la consola del navegador, no aquí.
 }
