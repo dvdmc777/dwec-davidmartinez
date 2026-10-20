@@ -123,12 +123,31 @@ function modulo() {
 // ============================================================
 
 function cualEsMayor() {
+  const n1 = leerNumero("numero1");
+  const n2 = leerNumero("numero2");
+  
+  if (Number.isNaN(n1) || Number.isNaN(n2)) {
+    mostrar("Escribe los dos números antes de operar.", "danger");
+    console.warn("Cual es mayor: falta algún número");
+  } else if (n1 > n2) {
+    mostrar("El primer número es mayor.");
+  }  else if (n1 < n2){
+    mostrar("El segundo número es mayor.");
+  } else {
+    mostrar("Son iguales.");
+  }
   // TODO: con if, else if y else, di cuál de los dos números es mayor o si son iguales.
 }
 
 function parOImpar() {
   // TODO: solo con el número 1. Usa el operador % y el ternario ( condición ? "par" : "impar" ).
   // TODO: si el número tiene decimales, avisa de que no es ni par ni impar.
+  const n1 = leerNumero("numero1");
+  let parimp = "";
+  (Number.isNaN(n1) && (n1 % 2) == 0) ? parimp = "par" : parimp = "impar";
+  (!Number.isInteger(n1 % 2)) ? parimp = "ni par ni impar" : parimp = parimp; 
+  mostrar(`El número es ${parimp}.`);
+  
 }
 
 
