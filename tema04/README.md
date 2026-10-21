@@ -1,17 +1,8 @@
 # Tarea 4 · Calculadora y bucles
 
-**Autor:** [Tu nombre y apellidos] · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
+**Autor:** David Martínez Castro · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
-> **Plantilla de la tarea 4.** Cómo usarla:
->
-> 1. Copia esta carpeta en tu repositorio de DWEC y cámbiale el nombre a `tema04`.
-> 2. `index.html` trae lo imprescindible para empezar: las dos casillas, la zona de resultado y el botón «Sumar». El resto de la página y su maquetación con Bootstrap los haces tú.
-> 3. `js/app.js` trae `sumar()` hecha como modelo y las demás funciones con `TODO`.
-> 4. `js/ayudas.js` no se toca: son las funciones que leen las casillas y escriben el resultado.
-> 5. Sustituye las imágenes de `capturas/` por las tuyas, **con el mismo nombre**.
-> 6. Todo lo que va entre [corchetes] es un hueco: cámbialo por lo tuyo. Al terminar, borra este aviso.
-
-[Una o dos líneas: qué hay en esta carpeta y cómo se ve. Por ejemplo: abrir la carpeta en VS Code, pulsar **Go Live**, escribir dos números y pulsar los botones con la consola abierta (F12).]
+En esta carpeta está la práctica del tema 4, para verla se puede usar Live Server de visual estudio code, se escriben uno o dos números según el botón y se pulsa.
 
 ## Capturas
 
@@ -19,40 +10,41 @@
 
 <img src="capturas/a-pagina.png" alt="La página entera con mi nombre en la navbar" width="600">
 
-[Qué se ve: tu nombre en la navbar y cómo has repartido las cards con la rejilla.]
+Se ve la página con mi nombre en el navbar.
 
 ### b) La página en el móvil
 
 <img src="capturas/b-movil.png" alt="La página en el modo móvil de las herramientas de desarrollo" width="300">
 
-[Qué cambia respecto a la pantalla grande.]
+Principalmente cambia el tamaño de los márgenes que se reducen y que los botones quedan apilados.
 
 ### c) El error de dividir entre 0
 
 ![El error de dividir entre 0 con la consola abierta](capturas/c-dividir-cero.png)
 
-[Qué se ve en la página y en la consola.]
+Se ven dos números siendo el divisor 0, y un error tanto en la página como en consola sobre dividir entre 0.
 
 ### d) Los tres bucles con el número 0
 
 ![Los tres bucles de texto con el número 0 y la consola abierta](capturas/d-bucles-cero.png)
 
-[Cuántas veces se repite cada bucle y por qué.]
+El for y while no lo hacen ninguna vez, mientras que el do while lo hace una, porque primero ejecuta el código de dentro y luego revisa la condición a diferencia de for y while que lo hacen antes.
 
 ### e) Un bucle con badges
 
 ![Un bucle con badges](capturas/e-badges.png)
 
-[Qué número has puesto y cómo eliges el color de cada badge.]
+He puesto el 5, cambio los colores mediante los valores primary y secondary en anadirBadges() según sea el número par o impar.
 
 ## Reflexión
 
-[De 5 a 8 líneas: ¿en qué se diferencian for, while y do…while y cuándo usarías cada uno? Pon como ejemplo lo que pasó con el 0.]
+Todos sirven para hacer bucles, for se suele usar par bucles en los que se tiene que repetir un número determinado de veces, while cuando se tiene que repetir mientras se cumpla una condición y do while cuando quieres un bucle en el que al menos una vez se ejecute el código.
+En el caso de do while con 0 se ejecuta una vez mientras que en el while no.
 
 ## Fuentes
 
-- [Título de la página](https://enlace-a-la-fuente)
+- [ChatGPT](https://chatgpt.com)
 
 ## Uso de IA
 
-[Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
+ChatGPT: para informarme sobre las diferencias entre for, while y do while.

@@ -76,6 +76,7 @@ function dividir() {
     console.warn("Dividir: falta algún número");
   } else if (n2 == 0) {
     mostrar("El segundo número no puede ser 0.", "danger");
+    console.warn("El segundo número no puede ser 0.");
   } else {
     const resultado = n1 / n2;
     mostrar(`${n1} / ${n2} = ${resultado}`);
@@ -169,10 +170,12 @@ function bucleFor() {
     mostrar("Error en el bucle.", "danger");
   } else {
     for (i = 1;i <= veces;i++){
+      console.log(`for : ${i}`);
       anadirLinea(`for · repetición ${i} de ${veces}.`);
       contador++;
     }
     anadirLinea(`Total: ${contador} repeticiones`);
+    console.log(`Total: ${contador}`);
   }
   // TODO: si el número falta, tiene decimales o pasa de MAXIMO_REPETICIONES, muestra un error en rojo.
   // TODO: si no, repite con un for tantas veces como diga «veces». En cada vuelta:
@@ -191,11 +194,13 @@ function bucleWhile() {
   } else {
     let i = 1;
     while (i <= veces){
+      console.log(`while : ${i}`);
       anadirLinea(`while · repetición ${i} de ${veces}.`);
       contador++;
       i++;
     }
     anadirLinea(`Total: ${contador} repeticiones`);
+    console.log(`Total: ${contador}`);
   }
 }
 
@@ -209,11 +214,13 @@ function bucleDoWhile() {
   } else {
     let i = 1;
     do {
+      console.log(`do while : ${i}`);
       anadirLinea(`do while · repetición ${i} de ${veces}.`);
       contador++;
       i++;
     }while (i <= veces);
     anadirLinea(`Total: ${contador} repeticiones`);
+    console.log(`Total: ${contador}`);
   }
 }
 
