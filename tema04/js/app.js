@@ -226,12 +226,57 @@ function badgesFor() {
   // TODO: como bucleFor(), pero cada vuelta añade un badge con el número de la repetición:
   //         anadirBadge(i, "primary");
   // TODO: los pares, de un color y los impares, de otro. Elige el color con el operador ternario.
+  const veces = leerNumero("numero1");
+  limpiarSalida();
+  let contador = 0;
+  if (Number.isNaN(veces) || !Number.isInteger(veces) || veces > MAXIMO_REPETICIONES){
+    mostrar("Error en el bucle.", "danger");
+  } else {
+    for (i = 1;i <= veces;i++){
+      ((i % 2) == 0) ? anadirBadge(i,"primary") : anadirBadge(i,"secondary");
+      anadirLinea(`for · repetición ${i} de ${veces}.`);
+      contador++;
+
+      //((n1 % 2) == 0) ? anadirBadge(i,"primary") : anadirBadge(i,"secondary");
+    }
+    anadirLinea(`Total: ${contador} repeticiones`);
+  }
 }
 
 function badgesWhile() {
   // TODO: lo mismo que badgesFor(), con un while.
+  const veces = leerNumero("numero1");
+  limpiarSalida();
+  let contador = 0;
+  if (Number.isNaN(veces) || !Number.isInteger(veces) || veces > MAXIMO_REPETICIONES){
+    mostrar("Error en el bucle.", "danger");
+  } else {
+    let i = 1;
+    while (i <= veces){
+      ((i % 2) == 0) ? anadirBadge(i,"primary") : anadirBadge(i,"secondary");
+      anadirLinea(`while · repetición ${i} de ${veces}.`);
+      contador++;
+      i++;
+    }
+    anadirLinea(`Total: ${contador} repeticiones`);
+  }
 }
 
 function badgesDoWhile() {
   // TODO: lo mismo que badgesFor(), con un do…while.
+  const veces = leerNumero("numero1");
+  limpiarSalida();
+  let contador = 0;
+  if (Number.isNaN(veces) || !Number.isInteger(veces) || veces > MAXIMO_REPETICIONES){
+    mostrar("Error en el bucle.", "danger");
+  } else {
+    let i = 1;
+    do {
+      ((i % 2) == 0) ? anadirBadge(i,"primary") : anadirBadge(i,"secondary");
+      anadirLinea(`do while · repetición ${i} de ${veces}.`);
+      contador++;
+      i++;
+    }while (i <= veces);
+    anadirLinea(`Total: ${contador} repeticiones`);
+  }
 }
