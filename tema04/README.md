@@ -48,3 +48,4 @@ En el caso de do while con 0 se ejecuta una vez mientras que en el while no.
 ## Uso de IA
 
 ChatGPT: para informarme sobre las diferencias entre for, while y do while.
+Claude: añadir comentarios a las funciones de js y detectar errores.
