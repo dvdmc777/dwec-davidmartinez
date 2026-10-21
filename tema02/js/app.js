@@ -16,3 +16,7 @@ function useragent(){
     alert(navigator.userAgent);    
     console.log("Has pulsado el boton Que navegador soy:"+navigator.userAgent);
 }
+
+function despedida(){
+    console.log("Adios")
+}

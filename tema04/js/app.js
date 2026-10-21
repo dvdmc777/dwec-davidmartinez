@@ -144,8 +144,13 @@ function parOImpar() {
   // TODO: si el número tiene decimales, avisa de que no es ni par ni impar.
   const n1 = leerNumero("numero1");
   let parimp = "";
-  (Number.isNaN(n1) && (n1 % 2) == 0) ? parimp = "par" : parimp = "impar";
-  (!Number.isInteger(n1 % 2)) ? parimp = "ni par ni impar" : parimp = parimp; 
+  ((n1 % 2) == 0) ? parimp = "par" : parimp = "impar";
+  if (!Number.isInteger(n1)) { 
+    parimp = "ni par ni impar";
+  }
+  if (Number.isNaN(n1)){ 
+    mostrar("Introduce un número en número 1.");
+  }
   mostrar(`El número es ${parimp}.`);
   
 }
