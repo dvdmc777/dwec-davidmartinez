@@ -75,24 +75,37 @@
                    restar(), multiplicar(), dividir(), potencia() y modulo() -->
       </div>
     </section>
+    
+    <!-- TODO EJERCICIO 2 · Comparaciones: una card con los botones
+               «¿Cuál es mayor?» → cualEsMayor()     «¿Par o impar?» → parOImpar() -->
+
     <section class="card mb-4">
       <div class="card-header">Calculadora</div>
       <div class="card-body">
         <!-- Cada botón llama con onclick a su función de js/app.js, como en la tarea 3 -->
         <button type="button" class="btn btn-primary m-1" onclick="cualEsMayor()">Cual es mayor</button>
         <button type="button" class="btn btn-primary m-1" onclick="parOImpar()">Es par o impar</button>
-        <!-- TODO: los botones Restar, Multiplicar, Dividir, Potencia y Módulo:
-                   restar(), multiplicar(), dividir(), potencia() y modulo() -->
       </div>
     </section>
-
-    <!-- TODO EJERCICIO 2 · Comparaciones: una card con los botones
-               «¿Cuál es mayor?» → cualEsMayor()     «¿Par o impar?» → parOImpar() -->
 
     <!-- TODO EJERCICIOS 3 Y 4 · Bucles: una card con dos grupos de botones (btn-group)
                Con texto:  for → bucleFor()    while → bucleWhile()    do…while → bucleDoWhile()
                Con badges: for → badgesFor()   while → badgesWhile()   do…while → badgesDoWhile() -->
 
+    <section class="card mb-4">
+      <div class="card-header">Calculadora</div>
+      <div class="btn-group">
+        <!-- Cada botón llama con onclick a su función de js/app.js, como en la tarea 3 -->
+        <button type="button" class="btn btn-primary m-1" onclick="bucleFor()">Bucle for</button>
+        <button type="button" class="btn btn-primary m-1" onclick="bucleWhile()">Bucle while</button>
+        <button type="button" class="btn btn-primary m-1" onclick="bucleDoWhile()">Bucle do while</button>
+      </div>
+      <div class="btn-group">
+        <!-- Cada botón llama con onclick a su función de js/app.js, como en la tarea 3 -->
+        <button type="button" class="btn btn-primary m-1" onclick="cualEsMayor()">Cual es mayor</button>
+        <button type="button" class="btn btn-primary m-1" onclick="parOImpar()">Es par o impar</button>
+      </div>
+    </section>
   </main>
 
   <footer class="bg-body-tertiary border-top py-3">

@@ -164,7 +164,16 @@ function parOImpar() {
 function bucleFor() {
   const veces = leerNumero("numero1");
   limpiarSalida();
-
+  let contador = 0;
+  if (Number.isNaN(veces) || !Number.isInteger(veces) || veces > MAXIMO_REPETICIONES){
+    mostrar("Error en el bucle.", "danger");
+  } else {
+    for (i = 1;i <= veces;i++){
+      anadirLinea(`for · repetición ${i} de ${veces}.`);
+      contador++;
+    }
+    anadirLinea(`Total: ${contador} repeticiones`);
+  }
   // TODO: si el número falta, tiene decimales o pasa de MAXIMO_REPETICIONES, muestra un error en rojo.
   // TODO: si no, repite con un for tantas veces como diga «veces». En cada vuelta:
   //         anadirLinea(`for · repetición ${i} de ${veces}`);
@@ -174,10 +183,38 @@ function bucleFor() {
 
 function bucleWhile() {
   // TODO: lo mismo que bucleFor(), con un while.
+  const veces = leerNumero("numero1");
+  limpiarSalida();
+  let contador = 0;
+  if (Number.isNaN(veces) || !Number.isInteger(veces) || veces > MAXIMO_REPETICIONES){
+    mostrar("Error en el bucle.", "danger");
+  } else {
+    let i = 1;
+    while (i <= veces){
+      anadirLinea(`while · repetición ${i} de ${veces}.`);
+      contador++;
+      i++;
+    }
+    anadirLinea(`Total: ${contador} repeticiones`);
+  }
 }
 
 function bucleDoWhile() {
   // TODO: lo mismo que bucleFor(), con un do…while. Pruébalo con 0 y con un negativo: ¿qué pasa?
+  const veces = leerNumero("numero1");
+  limpiarSalida();
+  let contador = 0;
+  if (Number.isNaN(veces) || !Number.isInteger(veces) || veces > MAXIMO_REPETICIONES){
+    mostrar("Error en el bucle.", "danger");
+  } else {
+    let i = 1;
+    do {
+      anadirLinea(`do while · repetición ${i} de ${veces}.`);
+      contador++;
+      i++;
+    }while (i <= veces);
+    anadirLinea(`Total: ${contador} repeticiones`);
+  }
 }
 
 
