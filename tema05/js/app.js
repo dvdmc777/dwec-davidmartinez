@@ -43,6 +43,7 @@ function anadirParrafo() {
 
   const aviso2 = document.querySelector("#aviso2");
   aviso2.classList.add("d-none");
+  console.log('Párrafo añadido.');
 }
 
 function eliminarUltimo() {
@@ -52,6 +53,7 @@ function eliminarUltimo() {
     aviso2.classList.remove("d-none");
   } else {
     ultparr.remove();
+    console.log('Párrafo eliminado.');
   }
 }
 
@@ -62,18 +64,19 @@ function eliminarUltimo() {
 
 function activarResaltado() {
   const parrafos = document.querySelectorAll("#contenido p");
-
+  let parractiv = 0;
   for (const parrafo of parrafos) {
-    // addEventListener("mouseenter", ...) ejecuta la función cuando el ratón entra en el párrafo.
-    // Los eventos los veremos a fondo en el tema 9: de momento, copia este modelo.
     parrafo.addEventListener("mouseenter", function () {
-      parrafo.classList.add("bg-body-secondary");
+      parrafo.classList.add("bg-body-secondary");      
     });
 
-    // TODO: lo mismo con "mouseleave" (cuando el ratón sale) para quitar la clase.
   }
-
-  // TODO: un console.log() que diga en cuántos párrafos se ha activado (parrafos.length).
+  for (const parrafo of parrafos) {
+    parrafo.addEventListener("mouseleave", function () {
+      parrafo.classList.remove("bg-body-secondary");
+    });
+  }
+  console.log(`Se han activado ${parrafos.length}`);
 }
 
 
