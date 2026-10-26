@@ -85,14 +85,31 @@ function activarResaltado() {
 // ============================================================
 
 function cambiarTexto() {
-  // TODO: lee lo escrito en #nuevoTexto con value y quítale los espacios de los extremos con trim().
-  // TODO: si está vacío, muestra el error #error4 (quítale "d-none") y no cambies nada.
-  // TODO: si no, pon ese texto en el primer párrafo de #contenido con textContent y oculta el error.
+  let nuevoTexto = document.querySelector('#nuevoTexto').value;
+  const error4 = document.querySelector('#error4');
+  const textoantiguo = document.querySelector('#contenido p').firstChild;
+
+  nuevoTexto = nuevoTexto.trim();
+  if (nuevoTexto !== "") {
+    textoantiguo.textContent= nuevoTexto;
+    error4.classList.add('d-none');
+  } else {
+    error4.classList.remove('d-none');
+  }
 }
 
 function cambiarConHtml() {
-  // TODO: lo mismo que cambiarTexto(), pero con innerHTML.
-  //       Prueba las dos con <b>hola</b> y explica en el README qué diferencia ves y por qué es peligroso.
+  let nuevoTexto = document.querySelector('#nuevoTexto').value;
+  const error4 = document.querySelector('#error4');
+  const textoantiguo = document.querySelector('#contenido p');
+
+  nuevoTexto = nuevoTexto.trim();
+  if (nuevoTexto !== "") {
+    textoantiguo.innerHTML= nuevoTexto;
+    error4.classList.add('d-none');
+  } else {
+    error4.classList.remove('d-none');
+  }
 }
 
 
