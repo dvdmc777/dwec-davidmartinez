@@ -36,16 +36,23 @@ function aplicarCambios() {
 // ============================================================
 
 function anadirParrafo() {
-  // TODO: crea un <p> con document.createElement().
-  // TODO: dale el texto «Párrafo nuevo N», donde N es el número de párrafos que habrá en #contenido
-  //       (pista: document.querySelector("#contenido").children.length).
-  // TODO: cuélgalo al final de #contenido con append().
+  const parrafo = document.createElement("p");
+  let numparr = document.querySelector("#contenido").children.length +1;
+  parrafo.textContent = `Párrafo nuevo ${numparr}`;
+  document.querySelector("#contenido").append(parrafo);
+
+  const aviso2 = document.querySelector("#aviso2");
+  aviso2.classList.add("d-none");
 }
 
 function eliminarUltimo() {
-  // TODO: busca el último párrafo de #contenido (lastElementChild).
-  // TODO: si es null (ya no queda ninguno), muestra el aviso #aviso2 quitándole la clase "d-none".
-  //       Si no, bórralo con remove().
+  const ultparr = document.querySelector("#contenido").lastElementChild;
+  if (ultparr === null) {
+    const aviso2 = document.querySelector("#aviso2");
+    aviso2.classList.remove("d-none");
+  } else {
+    ultparr.remove();
+  }
 }
 
 
