@@ -93,8 +93,10 @@ function cambiarTexto() {
   if (nuevoTexto !== "") {
     textoantiguo.textContent= nuevoTexto;
     error4.classList.add('d-none');
+    console.log('Texto añadido.')
   } else {
     error4.classList.remove('d-none');
+    console.log('Error al cambiar texto.')
   }
 }
 
@@ -107,8 +109,10 @@ function cambiarConHtml() {
   if (nuevoTexto !== "") {
     textoantiguo.innerHTML= nuevoTexto;
     error4.classList.add('d-none');
+    console.log('HTML cambiado.')
   } else {
     error4.classList.remove('d-none');
+    console.log('Error al cambiar HTML.')
   }
 }
 
@@ -124,6 +128,35 @@ function anadirTarea() {
   //         · un <span> con el texto de la tarea (textContent).
   //       Cuelga el <li> de #listaTareas y vacía la casilla (value = "").
   // TODO: actualiza #totalTareas con el número de <li> que hay en la lista.
+  let texttarea = document.querySelector('#tareaInput').value;
+  texttarea = texttarea.trim();
+  const error = document.querySelector('#error5');
+  error.textContent = 'No puedes añadir una tarea vacía.';
+
+  if (texttarea === ''){
+    error.classList.remove('d-none');
+    console.log('Error, no se puede añadir una tarea vacía.') 
+  } else {
+    error.classList.add('d-none');
+    const li = document.createElement('li');
+    const input = document.createElement('input');
+    const span = document.createElement('span')
+    li.classList.add('list-group-item');
+    input.classList.add('form-check-input');
+    li.value = '';
+    input.type = 'checkbox';
+    span.textContent = texttarea;
+    li.appendChild(input);
+    li.appendChild(span);
+
+
+    const tareas = document.querySelector('#listaTareas');
+    tareas.appendChild(li);
+
+    const totaltareas = document.querySelector('#totaltareas');
+    totaltareas.textContent = `Tareas: ${tareas.children.length}`;
+    console.log('Tarea añadida.')
+  }
 }
 
 function borrarCompletadas() {
@@ -131,6 +164,17 @@ function borrarCompletadas() {
   // TODO: si no hay ninguna, avisa en #error5. Si hay, recórrelas con for…of y borra el <li> de cada una
   //       (el <li> es el padre de la casilla: parentElement).
   // TODO: actualiza #totalTareas.
+  const marcadas = document.querySelector('#listaTareas');
+  const error = document.querySelector('#error5');
+  error.textContent = 'No hay ninguna tarea que borrar.';
+  if (marcadas === ''){
+    error.classList.remove('d-none');
+    console.log('Error, no hay tarea que borrar.');
+  } else {
+    for (const li of marcadas){
+      li.remove;
+    }
+  }
 }
 
 
