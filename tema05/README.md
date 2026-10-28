@@ -48,7 +48,7 @@ En el movil sale como xs y en el ordenador como xxl.
 
 Que text content trata las etiquetas de HTML como texto, sin interpretarlas, mientras que inner HTML si que las interpreta.
 Esto hace que usar innerHTML sea más peligroso que textContent debido a que permite la inyección de código.
-En el caso de `<b>hola</b>` se ha podido observar como usando innerHTML el se aplicaba la etiqueta b y se mostraba el hola en negrita.
+En el caso de `<b>hola</b>` se ha podido observar como usando innerHTML se aplicaba la etiqueta b y se mostraba el hola en negrita.
 
 ## Fuentes
 
