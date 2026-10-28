@@ -122,12 +122,6 @@ function cambiarConHtml() {
 // ============================================================
 
 function anadirTarea() {
-  // TODO: lee el texto de #tareaInput (value + trim). Si está vacío, muestra un mensaje en #error5.
-  // TODO: si no, crea un <li class="list-group-item"> con dos elementos dentro:
-  //         · un <input> de tipo "checkbox" con la clase "form-check-input",
-  //         · un <span> con el texto de la tarea (textContent).
-  //       Cuelga el <li> de #listaTareas y vacía la casilla (value = "").
-  // TODO: actualiza #totalTareas con el número de <li> que hay en la lista.
   let texttarea = document.querySelector('#tareaInput').value;
   texttarea = texttarea.trim();
   const error = document.querySelector('#error5');
@@ -149,31 +143,49 @@ function anadirTarea() {
     li.appendChild(input);
     li.appendChild(span);
 
-
     const tareas = document.querySelector('#listaTareas');
     tareas.appendChild(li);
 
-    const totaltareas = document.querySelector('#totaltareas');
-    totaltareas.textContent = `Tareas: ${tareas.children.length}`;
-    console.log('Tarea añadida.')
+    const contadortareashtml = document.querySelector('#totalTareas');
+    const tareasli = document.querySelectorAll('#listaTareas li');
+    let contadortareas = 0;
+    for (const li of tareasli){
+      contadortareas++;
+    }   
+    contadortareashtml.textContent = contadortareas;
+    console.log(`Total de tareas: ${contadortareas}`);    
   }
 }
 
 function borrarCompletadas() {
-  // TODO: selecciona las casillas marcadas: document.querySelectorAll("#listaTareas input:checked").
-  // TODO: si no hay ninguna, avisa en #error5. Si hay, recórrelas con for…of y borra el <li> de cada una
-  //       (el <li> es el padre de la casilla: parentElement).
-  // TODO: actualiza #totalTareas.
-  const marcadas = document.querySelector('#listaTareas');
-  const error = document.querySelector('#error5');
+  const marcadas = document.querySelectorAll('#listaTareas li input:checked');
+  const error = document.querySelector('#error5');  
+  const totaltareas = document.querySelector('#totalTareas'); 
   error.textContent = 'No hay ninguna tarea que borrar.';
-  if (marcadas === ''){
+
+  if (marcadas.length === 0){
     error.classList.remove('d-none');
     console.log('Error, no hay tarea que borrar.');
+    const tareas = document.querySelectorAll('#listaTareas li');
+    let contadortareas = 0;
+    for (const li of tareas){
+      contadortareas++;
+    }   
+    totaltareas.textContent = `${contadortareas}`;
+    error.classList.add('d-none');
+    console.log(`Total de tareas: ${contadortareas}`);
   } else {
     for (const li of marcadas){
-      li.remove;
+      li.parentElement.remove();
     }
+    const tareas = document.querySelectorAll('#listaTareas li');
+    let contadortareas = 0;
+    for (const li of tareas){
+      contadortareas++;
+    }   
+    totaltareas.textContent = `${contadortareas}`;
+    error.classList.add('d-none');
+    console.log(`Total de tareas: ${contadortareas}`);
   }
 }
 
@@ -187,7 +199,13 @@ function verDatosVentana() {
   const ancho = window.innerWidth;
   const alto = window.innerHeight;
   document.querySelector("#datoVentana").textContent = `${ancho} × ${alto} px`;
-
+  const datopunto = querySelector.
+  if(ancho < 576) {
+  datoPunto.textContent = 'xs';
+} else if (1) {
+    
+  }
+  document.querySelector("")
   // TODO: con if / else if, el punto de corte de Bootstrap según el ancho: xs (< 576), sm (≥ 576), md (≥ 768),
   //       lg (≥ 992), xl (≥ 1200) y xxl (≥ 1400). Escríbelo en #datoPunto.
   // TODO: el tamaño de la pantalla (screen.width y screen.height) en #datoPantalla.
