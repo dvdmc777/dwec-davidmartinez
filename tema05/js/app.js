@@ -1,15 +1,6 @@
 /*
   Tarea 5 · DWEC · David Martínez Castro
   Manipular el DOM.
-
-  Cómo usar esta plantilla:
-  · Desde este tema, el JavaScript escribe en la página: selecciona elementos y cambia su texto, sus clases...
-  · Hay una función por botón. Escribe tu código donde pone TODO y, cuando termines, borra el TODO.
-  · app.js se carga en el <head> con defer: cuando se ejecuta, el HTML ya está leído.
-  · Selecciona con document.querySelector() / querySelectorAll() (o getElementById).
-  · Texto con textContent; aspecto con classList y las clases de Bootstrap (no con style).
-  · Cada función deja también su rastro en la consola con console.log().
-  · let y const, nunca var. Compara siempre con ===. Comillas rectas.
 */
 
 console.log("app.js cargado");
@@ -27,7 +18,7 @@ function aplicarCambios() {
   segundo.classList.add("bg-warning-subtle");
   const tercero = document.querySelectorAll("#contenido p");
   tercero[2].classList.add("text-danger");
-  console.log('Se han aplicado los cambios.')
+  console.log('Se han aplicado los cambios.');
 }
 
 
@@ -51,6 +42,7 @@ function eliminarUltimo() {
   if (ultparr === null) {
     const aviso2 = document.querySelector("#aviso2");
     aviso2.classList.remove("d-none");
+    console.log('No hay párrafos que eliminar');
   } else {
     ultparr.remove();
     console.log('Párrafo eliminado.');
@@ -64,7 +56,6 @@ function eliminarUltimo() {
 
 function activarResaltado() {
   const parrafos = document.querySelectorAll("#contenido p");
-  let parractiv = 0;
   for (const parrafo of parrafos) {
     parrafo.addEventListener("mouseenter", function () {
       parrafo.classList.add("bg-body-secondary");      
@@ -76,7 +67,7 @@ function activarResaltado() {
       parrafo.classList.remove("bg-body-secondary");
     });
   }
-  console.log(`Se han activado ${parrafos.length}`);
+  console.log(`Se han activado ${parrafos.length} párrafos`);
 }
 
 
@@ -87,16 +78,16 @@ function activarResaltado() {
 function cambiarTexto() {
   let nuevoTexto = document.querySelector('#nuevoTexto').value;
   const error4 = document.querySelector('#error4');
-  const textoantiguo = document.querySelector('#contenido p').firstChild;
+  const textoantiguo = document.querySelector('#contenido p');
 
   nuevoTexto = nuevoTexto.trim();
   if (nuevoTexto !== "") {
     textoantiguo.textContent= nuevoTexto;
     error4.classList.add('d-none');
-    console.log('Texto añadido.')
+    console.log('Texto añadido.');
   } else {
     error4.classList.remove('d-none');
-    console.log('Error al cambiar texto.')
+    console.log('Error al cambiar texto.');
   }
 }
 
@@ -109,10 +100,10 @@ function cambiarConHtml() {
   if (nuevoTexto !== "") {
     textoantiguo.innerHTML= nuevoTexto;
     error4.classList.add('d-none');
-    console.log('HTML cambiado.')
+    console.log('HTML cambiado.');
   } else {
     error4.classList.remove('d-none');
-    console.log('Error al cambiar HTML.')
+    console.log('Error al cambiar HTML.');
   }
 }
 
@@ -129,12 +120,12 @@ function anadirTarea() {
 
   if (texttarea === ''){
     error.classList.remove('d-none');
-    console.log('Error, no se puede añadir una tarea vacía.') 
+    console.log('Error, no se puede añadir una tarea vacía.');
   } else {
     error.classList.add('d-none');
     const li = document.createElement('li');
     const input = document.createElement('input');
-    const span = document.createElement('span')
+    const span = document.createElement('span');
     li.classList.add('list-group-item');
     input.classList.add('form-check-input');
     li.value = '';
@@ -172,7 +163,6 @@ function borrarCompletadas() {
       contadortareas++;
     }   
     totaltareas.textContent = `${contadortareas}`;
-    error.classList.add('d-none');
     console.log(`Total de tareas: ${contadortareas}`);
   } else {
     for (const li of marcadas){
@@ -199,22 +189,22 @@ function verDatosVentana() {
   const alto = window.innerHeight;
   document.querySelector("#datoVentana").textContent = `${ancho} × ${alto} px`;
   const datopunto = document.querySelector('#datoPunto');
-  if(ancho < 576) {
-  datopunto.textContent = 'xs 576';
-  } else if (ancho >= 576) {
-  datopunto.textContent = 'sm 576';  
-  } else if (ancho >= 768) {
-  datopunto.textContent = 'md 768';  
-  } else if (ancho >= 992) {
-  datopunto.textContent = 'lg 992';  
+  if (ancho >= 1400) {
+  datopunto.textContent = 'xxl (desde 1400 px)';
   } else if (ancho >= 1200) {
-  datopunto.textContent = 'xl 1200';  
-  } else if (ancho >= 1400) {
-  datopunto.textContent = 'xxl 1400';  
+    datopunto.textContent = 'xl (de 1200 a 1399 px)';
+  } else if (ancho >= 992) {
+    datopunto.textContent = 'lg (de 992 a 1199 px)';
+  } else if (ancho >= 768) {
+    datopunto.textContent = 'md (de 768 a 991 px)';
+  } else if (ancho >= 576) {
+    datopunto.textContent = 'sm (de 576 a 767 px)';
+  } else {
+    datopunto.textContent = 'xs (menos de 576 px)';
   }
   let pantalla = `${screen.width} x ${screen.height}`;
   document.querySelector('#datoPantalla').textContent = pantalla;
   document.querySelector('#datoUrl').textContent = location.href;
   document.querySelector('#datoIdioma').textContent = navigator.language;
-  console.log('Datos de ventana mostrados')
+  console.log('Datos de ventana mostrados');
 }
