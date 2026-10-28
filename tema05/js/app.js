@@ -1,5 +1,5 @@
 /*
-  Tarea 5 · DWEC · [Tu nombre y apellidos]
+  Tarea 5 · DWEC · David Martínez Castro
   Manipular el DOM.
 
   Cómo usar esta plantilla:
@@ -161,7 +161,7 @@ function borrarCompletadas() {
   const marcadas = document.querySelectorAll('#listaTareas li input:checked');
   const error = document.querySelector('#error5');  
   const totaltareas = document.querySelector('#totalTareas'); 
-  error.textContent = 'No hay ninguna tarea que borrar.';
+  error.textContent = 'No hay ninguna tarea completada que borrar.';
 
   if (marcadas.length === 0){
     error.classList.remove('d-none');
@@ -195,19 +195,26 @@ function borrarCompletadas() {
 // ============================================================
 
 function verDatosVentana() {
-  // El modelo: el tamaño de la ventana
   const ancho = window.innerWidth;
   const alto = window.innerHeight;
   document.querySelector("#datoVentana").textContent = `${ancho} × ${alto} px`;
-  const datopunto = querySelector.
+  const datopunto = document.querySelector('#datoPunto');
   if(ancho < 576) {
-  datoPunto.textContent = 'xs';
-} else if (1) {
-    
+  datopunto.textContent = 'xs';
+  } else if (ancho >= 576) {
+  datopunto.textContent = 'sm';  
+  } else if (ancho >= 768) {
+  datopunto.textContent = 'md';  
+  } else if (ancho >= 992) {
+  datopunto.textContent = 'lg';  
+  } else if (ancho >= 1200) {
+  datopunto.textContent = 'xl';  
+  } else if (ancho >= 1400) {
+  datopunto.textContent = 'xxl';  
   }
-  document.querySelector("")
-  // TODO: con if / else if, el punto de corte de Bootstrap según el ancho: xs (< 576), sm (≥ 576), md (≥ 768),
-  //       lg (≥ 992), xl (≥ 1200) y xxl (≥ 1400). Escríbelo en #datoPunto.
-  // TODO: el tamaño de la pantalla (screen.width y screen.height) en #datoPantalla.
-  // TODO: la URL (location.href) en #datoUrl y el idioma del navegador (navigator.language) en #datoIdioma.
+  let pantalla = `${screen.width} x ${screen.height}`;
+  document.querySelector('#datoPantalla').textContent = pantalla;
+  document.querySelector('#datoUrl').textContent = location.href;
+  document.querySelector('#datoIdioma').textContent = navigator.language;
+  console.log('Datos de ventana mostrados')
 }
