@@ -25,8 +25,8 @@ function aplicarCambios() {
   primero.textContent = "Texto modificado por JavaScript";
   const segundo = document.querySelector(".segundo");
   segundo.classList.add("bg-warning-subtle");
-  const tercero = document.querySelector("#contenido p:nth-of-type(3)");
-  tercero.classList.add("text-danger");
+  const tercero = document.querySelectorAll("#contenido p");
+  tercero[2].classList.add("text-danger");
   console.log('Se han aplicado los cambios.')
 }
 
@@ -200,17 +200,17 @@ function verDatosVentana() {
   document.querySelector("#datoVentana").textContent = `${ancho} × ${alto} px`;
   const datopunto = document.querySelector('#datoPunto');
   if(ancho < 576) {
-  datopunto.textContent = 'xs';
+  datopunto.textContent = 'xs 576';
   } else if (ancho >= 576) {
-  datopunto.textContent = 'sm';  
+  datopunto.textContent = 'sm 576';  
   } else if (ancho >= 768) {
-  datopunto.textContent = 'md';  
+  datopunto.textContent = 'md 768';  
   } else if (ancho >= 992) {
-  datopunto.textContent = 'lg';  
+  datopunto.textContent = 'lg 992';  
   } else if (ancho >= 1200) {
-  datopunto.textContent = 'xl';  
+  datopunto.textContent = 'xl 1200';  
   } else if (ancho >= 1400) {
-  datopunto.textContent = 'xxl';  
+  datopunto.textContent = 'xxl 1400';  
   }
   let pantalla = `${screen.width} x ${screen.height}`;
   document.querySelector('#datoPantalla').textContent = pantalla;

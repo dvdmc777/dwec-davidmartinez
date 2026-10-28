@@ -10,7 +10,7 @@
 > 4. Sustituye las imágenes de `capturas/` por las tuyas, **con el mismo nombre**.
 > 5. Todo lo que va entre [corchetes] es un hueco: cámbialo por lo tuyo. Al terminar, borra este aviso.
 
-[Una o dos líneas: qué hay en esta carpeta y cómo se ve. Por ejemplo: abrir la carpeta en VS Code, pulsar **Go Live** y probar los botones con la consola abierta (F12).]
+En esta carpeta está la práctica del tema 5 de desarrollo en entorno cliente y y se puede ver abriendo el html con live server y la consola con f12.
 
 ## Capturas
 
@@ -18,46 +18,60 @@
 
 <img src="capturas/a-pagina.png" alt="La página recién cargada con mi nombre en la navbar" width="600">
 
-[Qué se ve: tu nombre y los tres párrafos de partida.]
+Se ve mi nombre y los párrafos de partida, también los bostones de los tres primeros ejercicios.
 
 ### b) Ejercicios 1 y 2
 
 <img src="capturas/b-ej1-ej2.png" alt="Los párrafos después de aplicar los cambios y añadir dos párrafos" width="600">
 
-[Qué ha cambiado en cada párrafo y qué selector has usado para cada uno.]
+Al pulsar aplicar cambios, ha cambiado el texto del primer párrafo,el color de fondo del segundo y el color de la letra del tercero.
+He usado getelementById, querySelector y querySelectorAll.
+Al pulsar añadir parrafo se añade un párrafo y he usado querySelector;
 
 ### c) Ejercicio 3: resaltado al pasar el ratón
 
 ![Un párrafo resaltado con el ratón encima](capturas/c-ej3-resaltado.png)
 
-[Qué párrafo está resaltado y qué pasa con los párrafos que añades después.]
+Está resaltado el primer párrafo y si añades nuevos parrafos el  resaltado no se aplicará a los nuevos hasta que pulses de nuevo activar resaltado.
 
 ### d) Ejercicio 4: `<b>hola</b>` con innerHTML
 
 <img src="capturas/d-ej4-innerhtml.png" alt="El primer párrafo tras usar innerHTML" width="600">
 
-[Qué salía con «Cambiar texto» y qué sale con innerHTML.]
+Cuando usabas Cambiar texto las etiquetas de html se incluían en el contenido del parrafo, mientras que con innerHTML se aplican las etiquetas y el contenido aparece en negrita.
 
 ### e) Ejercicio 5: la lista de tareas
 
 ![La lista con tres tareas y una marcada](capturas/e-ej5-lista.png)
 
-[Tres tareas, una marcada, antes de pulsar «Borrar completadas».]
+Se ven las tres tareas pedidas y una de ellas marcada.
 
 ### f) Ejercicio 6: los datos de la ventana en el móvil
 
 <img src="capturas/f-ej6-movil.png" alt="Los datos de la ventana en el modo móvil" width="300">
 
-[Qué punto de corte sale en el móvil y cuál en tu ordenador.]
+En el movil sale como xs y en el ordenador como sm.
 
 ## Reflexión
 
-[De 5 a 8 líneas: ¿qué diferencia hay entre textContent e innerHTML y por qué no se debe meter en innerHTML lo que escribe el usuario? Pon como ejemplo lo que pasó con `<b>hola</b>`.]
+Que text content trata las etiquetas de HTML como texto, sin interpretarlas, mientras que inner HTML si que las interpreta.
+Esto hace que usar innerHTML sea más peligroso que textContent debido a que permite la inyección de código.
+En el caso de `<b>hola</b>` se ha podido observar como usando innerHTML el se aplicaba la etiqueta b y se mostraba el hola en negrita.
 
 ## Fuentes
 
-- [Título de la página](https://enlace-a-la-fuente)
+- ChatGPT(https://ChatGPT.com)
 
 ## Uso de IA
 
-[Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
+ChatGPT:
+Prompts:
+    qué diferencia hay entre textContent e innerHTML,
+    en js como se usa esto? document.getElementsByClassName(),
+    como se añaden clases a un elemento de js?,
+    diferencia entre queryselector queryselector all y getelement by id,
+    como se quita una clase de un elemento?,
+    como compruebo que una variable no esta vacia?,
+    como funciona el for of ?
+
+He usado estas preguntas para resolver dudas y entender mejor javascript.
