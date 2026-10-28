@@ -50,7 +50,7 @@ Se ven las tres tareas pedidas y una de ellas marcada.
 
 <img src="capturas/f-ej6-movil.png" alt="Los datos de la ventana en el modo móvil" width="300">
 
-En el movil sale como xs y en el ordenador como sm.
+En el movil sale como xs y en el ordenador como xxl.
 
 ## Reflexión
 
@@ -65,6 +65,7 @@ En el caso de `<b>hola</b>` se ha podido observar como usando innerHTML el se ap
 ## Uso de IA
 
 ChatGPT:
+
 Prompts:
     qué diferencia hay entre textContent e innerHTML,
     en js como se usa esto? document.getElementsByClassName(),
@@ -75,3 +76,5 @@ Prompts:
     como funciona el for of ?
 
 He usado estas preguntas para resolver dudas y entender mejor javascript.
+
+Claude: añadir comentarios al js.

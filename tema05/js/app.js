@@ -12,10 +12,13 @@ console.log("app.js cargado");
 // ============================================================
 
 function aplicarCambios() {
+  // Por id
   const primero = document.getElementById("primero");
   primero.textContent = "Texto modificado por JavaScript";
+  // Por clase
   const segundo = document.querySelector(".segundo");
   segundo.classList.add("bg-warning-subtle");
+  // Por selector de descendiente: se coge el tercer párrafo (índice 2)
   const tercero = document.querySelectorAll("#contenido p");
   tercero[2].classList.add("text-danger");
   console.log('Se han aplicado los cambios.');
@@ -28,10 +31,12 @@ function aplicarCambios() {
 
 function anadirParrafo() {
   const parrafo = document.createElement("p");
+  // El número del nuevo párrafo es la cantidad de hijos actuales + 1
   let numparr = document.querySelector("#contenido").children.length +1;
   parrafo.textContent = `Párrafo nuevo ${numparr}`;
   document.querySelector("#contenido").append(parrafo);
 
+  // Al añadir un párrafo se oculta el aviso de "no hay párrafos"
   const aviso2 = document.querySelector("#aviso2");
   aviso2.classList.add("d-none");
   console.log('Párrafo añadido.');
@@ -39,6 +44,7 @@ function anadirParrafo() {
 
 function eliminarUltimo() {
   const ultparr = document.querySelector("#contenido").lastElementChild;
+  // lastElementChild devuelve null si el contenedor está vacío
   if (ultparr === null) {
     const aviso2 = document.querySelector("#aviso2");
     aviso2.classList.remove("d-none");
@@ -56,6 +62,7 @@ function eliminarUltimo() {
 
 function activarResaltado() {
   const parrafos = document.querySelectorAll("#contenido p");
+  // mouseenter añade el resaltado y mouseleave lo quita
   for (const parrafo of parrafos) {
     parrafo.addEventListener("mouseenter", function () {
       parrafo.classList.add("bg-body-secondary");      
@@ -80,6 +87,7 @@ function cambiarTexto() {
   const error4 = document.querySelector('#error4');
   const textoantiguo = document.querySelector('#contenido p');
 
+  // Se valida que el campo no esté vacío (trim quita los espacios)
   nuevoTexto = nuevoTexto.trim();
   if (nuevoTexto !== "") {
     textoantiguo.textContent= nuevoTexto;
@@ -98,6 +106,7 @@ function cambiarConHtml() {
 
   nuevoTexto = nuevoTexto.trim();
   if (nuevoTexto !== "") {
+    // innerHTML interpreta las etiquetas HTML que escriba el usuario
     textoantiguo.innerHTML= nuevoTexto;
     error4.classList.add('d-none');
     console.log('HTML cambiado.');
@@ -123,6 +132,7 @@ function anadirTarea() {
     console.log('Error, no se puede añadir una tarea vacía.');
   } else {
     error.classList.add('d-none');
+    // Se construye el <li> con un checkbox y un <span> con el texto
     const li = document.createElement('li');
     const input = document.createElement('input');
     const span = document.createElement('span');
@@ -137,6 +147,7 @@ function anadirTarea() {
     const tareas = document.querySelector('#listaTareas');
     tareas.appendChild(li);
 
+    // Se recuenta el total de tareas y se actualiza el contador
     const contadortareashtml = document.querySelector('#totalTareas');
     const tareasli = document.querySelectorAll('#listaTareas li');
     let contadortareas = 0;
@@ -149,11 +160,13 @@ function anadirTarea() {
 }
 
 function borrarCompletadas() {
+  // :checked selecciona solo los checkbox marcados
   const marcadas = document.querySelectorAll('#listaTareas li input:checked');
   const error = document.querySelector('#error5');  
   const totaltareas = document.querySelector('#totalTareas'); 
   error.textContent = 'No hay ninguna tarea completada que borrar.';
 
+  // Si no hay ninguna marcada, se muestra el aviso
   if (marcadas.length === 0){
     error.classList.remove('d-none');
     console.log('Error, no hay tarea que borrar.');
@@ -165,9 +178,11 @@ function borrarCompletadas() {
     totaltareas.textContent = `${contadortareas}`;
     console.log(`Total de tareas: ${contadortareas}`);
   } else {
+    // El padre de cada checkbox es el <li> que hay que eliminar
     for (const li of marcadas){
       li.parentElement.remove();
     }
+    // Se actualiza el contador con las tareas que quedan
     const tareas = document.querySelectorAll('#listaTareas li');
     let contadortareas = 0;
     for (const li of tareas){
@@ -185,9 +200,11 @@ function borrarCompletadas() {
 // ============================================================
 
 function verDatosVentana() {
+  // Tamaño interior de la ventana del navegador
   const ancho = window.innerWidth;
   const alto = window.innerHeight;
   document.querySelector("#datoVentana").textContent = `${ancho} × ${alto} px`;
+  // Punto de corte de Bootstrap: se comprueba de mayor a menor ancho
   const datopunto = document.querySelector('#datoPunto');
   if (ancho >= 1400) {
   datopunto.textContent = 'xxl (desde 1400 px)';
@@ -202,6 +219,7 @@ function verDatosVentana() {
   } else {
     datopunto.textContent = 'xs (menos de 576 px)';
   }
+  // Datos de los objetos screen, location y navigator
   let pantalla = `${screen.width} x ${screen.height}`;
   document.querySelector('#datoPantalla').textContent = pantalla;
   document.querySelector('#datoUrl').textContent = location.href;
