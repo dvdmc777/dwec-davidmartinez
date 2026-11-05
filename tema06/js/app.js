@@ -1,5 +1,5 @@
 /*
-  Tarea 6 · DWEC · [Tu nombre y apellidos]
+  Tarea 6 · DWEC · David Martínez Castro
   Objetos y arrays.
 
   Cómo usar esta plantilla:
@@ -35,25 +35,52 @@ function comoTexto(lista) {
 // TODO: añádele el método presentarse(), que devuelve una frase con this.nombre, this.apellidos, this.edad y this.curso.
 //       Por ejemplo: «Soy [nombre] [apellidos], tengo [edad] años y estudio [curso].»
 const estudiante = {
+  nombre: "David",
+  apellidos: "Martínez Castro",
+  edad: 23,
+  curso: "2º de DAW",
 
+  presentarse() {
+    return `Soy ${this.nombre} ${this.apellidos}, tengo ${this.edad} años y estudio ${this.curso}.`;
+  }
 };
 
 function verFicha() {
-  // TODO: vacía #salida1 (textContent = "").
-  // TODO: crea un <ul class="list-group"> con un <li class="list-group-item"> por propiedad: «nombre: ...», «edad: ...».
-  //       Pista: guarda las claves en un array, ["nombre", "apellidos", "edad", "curso"], recórrelo con forEach
-  //       y lee cada valor con corchetes: estudiante[clave].
-  // TODO: debajo, un <p> con la frase de estudiante.presentarse().
-  // TODO: console.log() del objeto entero.
+  const salida = document.getElementById("salida1");
+  salida.textContent = "";
+
+  // Lista con una propiedad por <li>
+  const ul = document.createElement("ul");
+  ul.className = "list-group";
+
+  const estudianteclaves = ["nombre", "apellidos", "edad", "curso"];
+  estudianteclaves.forEach(
+    function (clave) {
+    const li = document.createElement("li");
+    li.className = "list-group-item";
+    li.textContent = clave + ": " + estudiante[clave];
+    ul.appendChild(li);
+  }
+);
+
+  const p = document.createElement("p");
+  p.textContent = estudiante.presentarse();
+
+  salida.appendChild(ul);
+  salida.appendChild(p);
+
+  console.log(estudiante);
 }
 
 function cumplirAnios() {
-  // TODO: suma 1 a la edad del estudiante y vuelve a pintar la ficha (llama a verFicha()).
+  estudiante.edad++;
+  verFicha();
 }
 
 function quitarCurso() {
   // TODO: borra la propiedad curso con delete y vuelve a pintar la ficha.
   //       Fíjate en lo que sale ahora en el curso y explícalo en el README.
+  delete(estudiante.curso);
 }
 
 
