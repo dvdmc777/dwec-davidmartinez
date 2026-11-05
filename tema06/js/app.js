@@ -256,18 +256,59 @@ mostrarProductos();   // la tabla completa nada más cargar
 // ============================================================
 
 const alumno = {
-  nombre: "[Tu nombre]",
-  notas: []
+  nombre: "David",
+  notas: [1, 10, 10, 10, 10, 9],
   // TODO: método anadirNota(nota): si la nota no es un número (Number.isNaN) o no está entre 0 y 10, devuelve false;
   //       si es válida, la añade a this.notas con push y devuelve true.
   // TODO: método media(): si no hay notas devuelve 0; si hay, la suma (con reduce) dividida entre el número de notas.
   //       Recuerda la coma entre una propiedad y la siguiente.
+  anadirNota(nota) {
+    if (Number.isNaN(nota) || nota < 0 || nota > 10) {
+      return false;
+    } else {
+      this.notas.push(nota);
+      return true;
+    }
+  },
+  media() {
+    if (this.notas.length === 0) {
+      return 0;
+    }
+    const suma = this.notas.reduce(
+      function (sumado, nota) {
+        return sumado + nota;
+      },
+      0);
+  }
 };
 
 function mostrarNotas() {
-  // TODO: vacía #notas y pon un badge (<span class="badge">) por nota: verde (text-bg-success) si es de 5 o más,
-  //       rojo (text-bg-danger) si no.
-  // TODO: en #media, «Media de N notas: X» con dos decimales (toFixed(2)), o «Todavía no hay notas.».
+  const notas = document.querySelector("#notas");
+  const media = document.querySelector("#media");
+  notas.textContent = "";
+
+  alumno.notas.forEach(
+    function (nota) {
+      const span = document.createElement("span");
+      span.classList.add("badge", "m-1");
+      if (nota >= 5) {
+        span.classList.add("text-bg-success");
+      } else {
+        span.classList.add("text-bg-danger");
+      }
+      span.textContent = nota;
+      notas.append(span);
+    }
+  )
+
+  if (alumno.notas.length === 0) {
+    media.textContent = "Todavía no hay notas.";
+  } else {
+    media.textContent =
+      `Nota media: ${alumno.media().toFixed(2)}`;
+  }
+
+
 }
 
 function anadirNota() {
@@ -275,10 +316,33 @@ function anadirNota() {
   //       Ojo: Number("") vale 0, así que esta comprobación va antes de convertir.
   // TODO: convierte el valor con Number() y llama a alumno.anadirNota(). Si devuelve false, muestra el error.
   // TODO: si ha ido bien, oculta el error, vacía la casilla y llama a mostrarNotas().
+  const error4 = document.querySelector("#error4");
+  
+  const nota = document.querySelector("#nota");
+  const texto = nota.value.trim();
+  
+  if (texto === "") {
+    error4.classList.remove("d-none");
+    error4.textContent = "Escribe una nota para añadirla.";
+    return;
+  }
+
+  const valido  = alumno.anadirNota(Number(texto)); 
+
+  if (!valido) {
+    error4.classList.remove("d-none");
+    error4.textContent = "Escribe un numero entre 10 y 0.";
+    return;
+  }
+
+  document.querySelector("#error4").classList.add("d-none");
+  nota.value = "";
+  mostrarNotas();
 }
 
 function borrarNotas() {
-  // TODO: deja alumno.notas vacío y vuelve a pintar.
+  alumno.notas = [];
+  mostrarNotas();
 }
 
 mostrarNotas();
