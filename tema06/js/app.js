@@ -1,18 +1,3 @@
-/*
-  Tarea 6 · DWEC · David Martínez Castro
-  Objetos y arrays.
-
-  Cómo usar esta plantilla:
-  · Hay una función por botón. Escribe tu código donde pone TODO y, cuando termines, borra el TODO.
-  · Ya tienes hechas, como modelo, comoTexto(), pintarProductos() y el ejercicio 2 casi entero:
-    léelas antes de empezar, porque el resto se hace igual.
-  · Los resultados se pintan en la página como en el tema 5: createElement, textContent, classList y append.
-    Antes de volver a pintar una lista, vacíala con textContent = "".
-  · Las funciones se escriben con function, también las que pasas a forEach, sort, map, filter o reduce.
-    Las funciones flecha las veremos en el tema 7: en esta tarea, no las uses.
-  · Cada función deja también su rastro en la consola con console.log().
-  · let y const, nunca var. Compara siempre con ===. Comillas rectas.
-*/
 
 console.log("app.js cargado");
 
@@ -31,9 +16,6 @@ function comoTexto(lista) {
 // Ejercicio 1 · Ficha de estudiante
 // ============================================================
 
-// TODO: completa el objeto literal con tus datos: nombre, apellidos, edad y curso.
-// TODO: añádele el método presentarse(), que devuelve una frase con this.nombre, this.apellidos, this.edad y this.curso.
-//       Por ejemplo: «Soy [nombre] [apellidos], tengo [edad] años y estudio [curso].»
 const estudiante = {
   nombre: "David",
   apellidos: "Martínez Castro",
@@ -217,10 +199,6 @@ function filtrarCaros() {
 }
 
 function buscarProducto() {
-  // TODO: lee #buscarProducto (value, trim y toLowerCase). Si está vacío, avisa en #mensaje3.
-  // TODO: con find(), el primer producto cuyo nombre en minúsculas contenga ese texto (includes).
-  // TODO: find devuelve undefined si no encuentra nada: en ese caso, dilo en #mensaje3 y vacía la tabla.
-  //       Si lo encuentra, píntalo solo a él: pintarProductos([encontrado]).
   const texto = document.querySelector("#buscarProducto").value.trim().toLowerCase();
   const mensaje3 = document.querySelector("#mensaje3");
   const tabla = document.querySelector("#tablaProductos");
@@ -258,10 +236,6 @@ mostrarProductos();   // la tabla completa nada más cargar
 const alumno = {
   nombre: "David",
   notas: [1, 10, 10, 10, 10, 9],
-  // TODO: método anadirNota(nota): si la nota no es un número (Number.isNaN) o no está entre 0 y 10, devuelve false;
-  //       si es válida, la añade a this.notas con push y devuelve true.
-  // TODO: método media(): si no hay notas devuelve 0; si hay, la suma (con reduce) dividida entre el número de notas.
-  //       Recuerda la coma entre una propiedad y la siguiente.
   anadirNota(nota) {
     if (Number.isNaN(nota) || nota < 0 || nota > 10) {
       return false;
@@ -312,10 +286,6 @@ function mostrarNotas() {
 }
 
 function anadirNota() {
-  // TODO: si #nota está vacía, muestra un error en #error4 (quítale "d-none").
-  //       Ojo: Number("") vale 0, así que esta comprobación va antes de convertir.
-  // TODO: convierte el valor con Number() y llama a alumno.anadirNota(). Si devuelve false, muestra el error.
-  // TODO: si ha ido bien, oculta el error, vacía la casilla y llama a mostrarNotas().
   const error4 = document.querySelector("#error4");
 
   const nota = document.querySelector("#nota");
@@ -355,8 +325,6 @@ mostrarNotas();
 const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function verDobles() {
-  // TODO: con map(), un array nuevo con el doble de cada número.
-  // TODO: escribe en #salida5 el resultado y, debajo, numeros (para que se vea que no ha cambiado).
   const dobles = numeros.map(n => n * 2);
   const salida = document.querySelector("#salida5");
   console.log(numeros);
@@ -365,7 +333,6 @@ function verDobles() {
 }
 
 function verPares() {
-  // TODO: con filter(), los números pares (n % 2 === 0). Escríbelos en #salida5 como en verDobles().
   const pares = numeros.filter(n => n % 2 === 0);
   const salida = document.querySelector("#salida5");
   salida.textContent = "[Pares: " + pares + "] [Originales: " + numeros + "]";
@@ -373,7 +340,6 @@ function verPares() {
 }
 
 function verSuma() {
-  // TODO: con reduce(), la suma de todos los números (empieza en 0). Escríbela en #salida5.
   const salida = document.querySelector("#salida5");
   const suma = numeros.reduce((total, n) => total + n, 0);
   salida.textContent = "[Suma: " + suma + "] ";
@@ -381,8 +347,6 @@ function verSuma() {
 }
 
 function verCadena() {
-  // TODO: los tres seguidos: los pares, después sus dobles y al final la suma de esos dobles.
-  //       Escribe en #salida5 una línea por paso.
   const salida = document.querySelector("#salida5");
   const pares = verPares();
   const dobles = verDobles();
@@ -402,12 +366,9 @@ const ciudadesOriginal = ["Granada", "Sevilla", "Málaga", "Córdoba", "Jaén", 
 let ciudades = [...ciudadesOriginal];   // una copia: splice cambia ciudades y así podemos restaurarla
 
 function mostrarCiudades() {
-  // TODO: vacía #ciudades y pon un badge por ciudad con su posición: «0 · Granada», «1 · Sevilla»...
-  //       Pista: forEach le pasa a tu función dos datos: function (ciudad, haceposicion) { ... }.
   const ciudadeshtm = document.querySelector("#ciudades");
 
-  // Vaciar el contenedor sin usar innerHTML
-  while (ciudadeshtm.firstChild) {
+ while (ciudadeshtm.firstChild) {
     ciudadeshtm.removeChild(ciudadeshtm.firstChild);
     console.log("guile");
   }
@@ -424,7 +385,6 @@ function mostrarCiudades() {
 }
 
 function verSlice() {
-  // TODO: guarda ciudades.slice(2, 5) y escribe en #salida6 qué devuelve y cuántas ciudades siguen en el array.
   const ciudadesslic = ciudades.slice(2, 5);
   const salida6 = document.querySelector("#salida6");
 
@@ -432,8 +392,6 @@ function verSlice() {
 }
 
 function hacerSplice() {
-  // TODO: si quedan menos de 3 ciudades, avisa en #salida6 de que hay que restaurar y no hagas nada más.
-  // TODO: si no, ciudades.splice(2, 2): escribe en #salida6 qué devuelve y cuántas quedan, y vuelve a pintar.
   const salida6 = document.querySelector("#salida6");
   if (ciudades.length < 3) {
     salida6.textContent = "Hay menos de 3 ciudades. Debes restaurar el array.";
@@ -448,7 +406,6 @@ function hacerSplice() {
 }
 
 function restaurarCiudades() {
-  // TODO: vuelve a copiar ciudadesOriginal en ciudades y pinta.
   ciudades = [...ciudadesOriginal];
 
   document.querySelector("#salida6").textContent = "Se ha restaurado el array original.";
@@ -457,8 +414,6 @@ function restaurarCiudades() {
 }
 
 function buscarCiudad() {
-  // TODO: lee #buscarCiudad (value y trim). Si está vacío, avisa.
-  // TODO: escribe en #salida6 lo que dan includes() e indexOf() con ese nombre. Si no está, indexOf da -1.
   const nombre = document.querySelector("#buscarCiudad").value.trim();
 
   if (nombre === "") {
