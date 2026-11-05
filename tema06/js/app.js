@@ -279,6 +279,7 @@ const alumno = {
         return sumado + nota;
       },
       0);
+    return suma;
   }
 };
 
@@ -299,13 +300,12 @@ function mostrarNotas() {
       span.textContent = nota;
       notas.append(span);
     }
-  )
-
+  );
+  console.log(alumno.media());
   if (alumno.notas.length === 0) {
     media.textContent = "Todavía no hay notas.";
   } else {
-    media.textContent =
-      `Nota media: ${alumno.media().toFixed(2)}`;
+    media.textContent = `Nota media: ${alumno.media().toFixed(2)}`;
   }
 
 
@@ -317,17 +317,17 @@ function anadirNota() {
   // TODO: convierte el valor con Number() y llama a alumno.anadirNota(). Si devuelve false, muestra el error.
   // TODO: si ha ido bien, oculta el error, vacía la casilla y llama a mostrarNotas().
   const error4 = document.querySelector("#error4");
-  
+
   const nota = document.querySelector("#nota");
   const texto = nota.value.trim();
-  
+
   if (texto === "") {
     error4.classList.remove("d-none");
     error4.textContent = "Escribe una nota para añadirla.";
     return;
   }
 
-  const valido  = alumno.anadirNota(Number(texto)); 
+  const valido = alumno.anadirNota(Number(texto));
 
   if (!valido) {
     error4.classList.remove("d-none");
@@ -357,19 +357,40 @@ const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 function verDobles() {
   // TODO: con map(), un array nuevo con el doble de cada número.
   // TODO: escribe en #salida5 el resultado y, debajo, numeros (para que se vea que no ha cambiado).
+  const dobles = numeros.map(n => n * 2);
+  const salida = document.querySelector("#salida5");
+  console.log(numeros);
+  salida.textContent = "[Dobles: " + dobles + "] [Originales: " + numeros + "]";
+  return salida.textContent;
 }
 
 function verPares() {
   // TODO: con filter(), los números pares (n % 2 === 0). Escríbelos en #salida5 como en verDobles().
+  const pares = numeros.filter(n => n % 2 === 0);
+  const salida = document.querySelector("#salida5");
+  salida.textContent = "[Pares: " + pares + "] [Originales: " + numeros + "]";
+  return salida.textContent;
 }
 
 function verSuma() {
   // TODO: con reduce(), la suma de todos los números (empieza en 0). Escríbela en #salida5.
+  const salida = document.querySelector("#salida5");
+  const suma = numeros.reduce((total, n) => total + n, 0);
+  salida.textContent = "[Suma: " + suma + "] ";
+  return salida.textContent;
 }
 
 function verCadena() {
   // TODO: los tres seguidos: los pares, después sus dobles y al final la suma de esos dobles.
   //       Escribe en #salida5 una línea por paso.
+  const salida = document.querySelector("#salida5");
+  const pares = verPares();
+  const dobles = verDobles();
+  const suma = verSuma();
+
+  document.getElementById("salida5").textContent =
+    pares + " ||  " + dobles +
+    " ||  " + suma;
 }
 
 
@@ -382,25 +403,75 @@ let ciudades = [...ciudadesOriginal];   // una copia: splice cambia ciudades y a
 
 function mostrarCiudades() {
   // TODO: vacía #ciudades y pon un badge por ciudad con su posición: «0 · Granada», «1 · Sevilla»...
-  //       Pista: forEach le pasa a tu función dos datos: function (ciudad, posicion) { ... }.
+  //       Pista: forEach le pasa a tu función dos datos: function (ciudad, haceposicion) { ... }.
+  const ciudadeshtm = document.querySelector("#ciudades");
+
+  // Vaciar el contenedor sin usar innerHTML
+  while (ciudadeshtm.firstChild) {
+    ciudadeshtm.removeChild(ciudadeshtm.firstChild);
+    console.log("guile");
+  }
+  ciudades.forEach(
+    function (ciudad, posicion) {
+      console.log("foreach");
+      const span = document.createElement("span");
+      span.textContent = `${posicion}  ·  ${ciudad}`;
+      span.classList.add("badge", "text-bg-primary", "m-1");
+      ciudadeshtm.append(span);
+      console.log(ciudadeshtm.children.length);
+    }
+  );
 }
 
 function verSlice() {
   // TODO: guarda ciudades.slice(2, 5) y escribe en #salida6 qué devuelve y cuántas ciudades siguen en el array.
+  const ciudadesslic = ciudades.slice(2, 5);
+  const salida6 = document.querySelector("#salida6");
+
+  salida6.textContent = `slice(2, 5) devuelve: ${ciudadesslic} Siguen quedando ${ciudades.length} ciudades en el array.`;
 }
 
 function hacerSplice() {
   // TODO: si quedan menos de 3 ciudades, avisa en #salida6 de que hay que restaurar y no hagas nada más.
   // TODO: si no, ciudades.splice(2, 2): escribe en #salida6 qué devuelve y cuántas quedan, y vuelve a pintar.
+  const salida6 = document.querySelector("#salida6");
+  if (ciudades.length < 3) {
+    salida6.textContent = "Hay menos de 3 ciudades. Debes restaurar el array.";
+    return;
+  }
+
+  const eliminadas = ciudades.splice(2, 2);
+
+  salida6.textContent = `splice(2, 2) devuelve: ${eliminadas}. ` + `Ahora quedan ${ciudades.length} ciudades.`;
+
+  mostrarCiudades();
 }
 
 function restaurarCiudades() {
   // TODO: vuelve a copiar ciudadesOriginal en ciudades y pinta.
+  ciudades = [...ciudadesOriginal];
+
+  document.querySelector("#salida6").textContent = "Se ha restaurado el array original.";
+
+  mostrarCiudades();
 }
 
 function buscarCiudad() {
   // TODO: lee #buscarCiudad (value y trim). Si está vacío, avisa.
   // TODO: escribe en #salida6 lo que dan includes() e indexOf() con ese nombre. Si no está, indexOf da -1.
+  const nombre = document.querySelector("#buscarCiudad").value.trim();
+
+  if (nombre === "") {
+    document.querySelector("#salida6").textContent = "Escribe el nombre de una ciudad para buscarla.";
+    return;
+  }
+
+  const existe = ciudades.includes(nombre);
+  const posicion = ciudades.indexOf(nombre);
+
+  document.querySelector("#salida6").textContent =
+    `includes("${nombre}"): ${existe}. ` +
+    `indexOf("${nombre}"): ${posicion}.`;
 }
 
 mostrarCiudades();
