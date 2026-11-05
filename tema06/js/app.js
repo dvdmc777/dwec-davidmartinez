@@ -48,12 +48,10 @@ const estudiante = {
 function verFicha() {
   const salida = document.getElementById("salida1");
   salida.textContent = "";
-
-  // Lista con una propiedad por <li>
   const ul = document.createElement("ul");
   ul.className = "list-group";
-
   const estudianteclaves = ["nombre", "apellidos", "edad", "curso"];
+
   estudianteclaves.forEach(
     function (clave) {
     const li = document.createElement("li");
@@ -128,12 +126,25 @@ function anadirColor() {
 }
 
 function quitarUltimo() {
-  // TODO: si la lista está vacía, avisa con avisar2() y no hagas nada más.
-  // TODO: si no, saca el último con pop(), vuelve a pintar la lista y di en la consola qué color ha salido.
+  if (colores.length === 0){
+    avisar2("No hay colores que quitar.");
+    console.log("No se ha borrado ningún color.");
+  } else {
+    const colquitado = colores.pop();
+    mostrarColores();
+    console.log(`Se ha sacado el color ${colquitado}`)
+  }
 }
 
 function quitarPrimero() {
-  // TODO: lo mismo que quitarUltimo(), pero sacando el primero con shift().
+  if (colores.length === 0){
+    avisar2("No hay colores que quitar.");
+    console.log("No se ha borrado ningún color.");
+  } else {
+    const colquitado = colores.shift();
+    mostrarColores();
+    console.log(`Se ha sacado el color ${colquitado}`)
+  }
 }
 
 mostrarColores();   // pinta los tres colores de partida nada más cargar
