@@ -11,7 +11,7 @@
 > 5. Sustituye las imágenes de `capturas/` por las tuyas, **con el mismo nombre**.
 > 6. Todo lo que va entre [corchetes] es un hueco: cámbialo por lo tuyo. Al terminar, borra este aviso.
 
-[Una o dos líneas: qué hay en esta carpeta y cómo se ve. Por ejemplo: abrir la carpeta en VS Code, pulsar **Go Live** y probar los botones con la consola abierta (F12).]
+En esta carpeta está el contenido de los ejercicios del tema 7, se pueden visualizar mediante live server en visual studio code.
 
 ## Capturas
 
@@ -19,40 +19,55 @@
 
 <img src="capturas/a-pagina.png" alt="La página recién cargada con mi nombre en la navbar" width="600">
 
-[Qué se ve nada más cargar: tu nombre y los dos alumnos de partida.]
+Se ve mi ejercicio y los nombres de los alumnos creados dentro de app.js.
 
 ### b) Ejercicios 1 y 2: el precio y las películas
 
 <img src="capturas/b-ej1-ej2.png" alt="El desglose del precio y una lista de películas" width="600">
 
-[Un precio con descuento y uno de los botones de las películas. Qué hace calcularPrecio() y qué hace mostrarPrecio().]
+calcularPrecio() aplica primero el descuento luego el iva y devielve el resultado, tiene por defecto iva=21 y descuento=0.
 
 ### c) Ejercicios 3 y 4: tu callback y los contadores
 
 ![El resultado de transformar y los dos contadores](capturas/c-ej3-ej4.png)
 
-[Qué hace transformar() por dentro y por qué cada contador lleva su propia cuenta.]
+transformar recorre la lista y hace una operacion con cada elemento, devuelve un arrray nuevo con los resultados haciendo push y lo devuelve. 
+
+Cada contador lleva su propia cuenta por que se crea una una funcion independiente con su propia cuenta.
 
 ### d) Ejercicio 5: los alumnos
 
 ![Las tarjetas de los alumnos](capturas/d-ej5-clases.png)
 
-[Al menos cuatro alumnos, alguno en prácticas. Cómo decide tu código si crea un Alumno o un AlumnoFCT.]
+Si empresa esta vacía se crea un objeto Alumno, si en cambio tiene contenido se crea un objeto AlumnoFCT.
 
 ### e) Ejercicio 6: fechas y textos
 
 ![Los días que faltan para una fecha y unas iniciales](capturas/e-ej6-fechas-textos.png)
 
-[Qué fecha has probado, cuántos días salen y por qué redondeas.]
+He probado la fecha 20/11/2026, salen 10 días, se redondea porque las fechas en milisegundos no dan siempre dias exactos debido a los cambios horarios, de esta forma se evita el problema.
 
 ## Reflexión
 
-[De 5 a 8 líneas: ¿qué cambia al pasar un callback de function a flecha? ¿Cuándo hace falta el return? ¿Por qué un método no se escribe con flecha? Pon un ejemplo de tu propio código.]
+Cambia la forma de escribir la función, con la flecha es más corto y cómodo, además de , el comportamiento es el mismo a excepción de this que se hereda automáticamente en las funciones con flecha según el contexto. El return hace falta cuando usas function, ya que con la flecha el return se hace automaticamente. 
+
+Los métodos no se escriben con flecha porque normalmente quieres que el comportamiento del this funcione apuntando al objeto en el cual está el método, usando la flecha y this, no apuntaría al propio objeto.
+
+
 
 ## Fuentes
 
-- [Título de la página](https://enlace-a-la-fuente)
+- [ChatGPT](https://chatgpt.com)
+- [Claude](https://claude.ai)
 
 ## Uso de IA
 
-[Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
+He usado tanto chatgpt como claude para ayudarme a entender funciones y corregir, algunos de los prompts que he usado son los siguientes:
+-corrige en funcion de lo que se pide en los comentarios 
+-con esto se convierte en un array? textoNotas.split(",").map((texto) => Number(texto.trim()));
+-como devuelvo una funcion?
+-el find en js como se usa?
+-que hace map?
+-como puedo saber si un array esta vacio?
+-y reduce que hace?
+-notas split cambia el array original?
