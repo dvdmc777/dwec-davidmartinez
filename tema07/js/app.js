@@ -43,8 +43,8 @@ function pintarLista(selector, textos) {
 //       Primero se resta el descuento (un tanto por ciento de la base) y después se suma el IVA.
 //       Comprueba en la consola: calcularPrecio(100) tiene que dar 121.
 function calcularPrecio(base, iva = 21, descuento = 0) {
- const descuentofinal = base -(base * descuento)/100;
- return descuentofinal + (descuentofinal * iva)/100;
+  const descuentofinal = base - (base * descuento) / 100;
+  return descuentofinal + (descuentofinal * iva) / 100;
 }
 console.log(calcularPrecio(100));
 
@@ -65,21 +65,21 @@ function mostrarPrecio() {
   const descuento = document.querySelector("#descuento").value;
   const error1 = document.querySelector("#error1");
 
-  if (base === "" || base < 0){
+  if (base === "" || base < 0) {
     error1.classList.remove("d-none");
     return;
   }
 
   let precio;
 
-  if (descuento === ""){
-    precio = calcularPrecio(base,iva);
-  } else if (descuento >= 0 && descuento <= 100){
-    precio = calcularPrecio(base,iva,descuento);
+  if (descuento === "") {
+    precio = calcularPrecio(base, iva);
+  } else if (descuento >= 0 && descuento <= 100) {
+    precio = calcularPrecio(base, iva, descuento);
   }
   error1.classList.add("d-none");
 
-  pintarLista("#salida1",[
+  pintarLista("#salida1", [
     `Precio sin IVA: ${formatearEuros(Number(base))}`,
     `Descuento: ${descuento}%`,
     `IVA: ${iva}%`,
@@ -112,28 +112,28 @@ function comoTexto(pelicula) {
 //       sin llaves ni return. Comprueba después que cada botón sigue dando lo mismo.
 
 function verTitulos() {
-  const titulos = peliculas.map(pelicula=>pelicula.titulo);  
+  const titulos = peliculas.map(pelicula => pelicula.titulo);
   pintarLista("#salida2", titulos);
   document.querySelector("#mensaje2").textContent = `${titulos.length} títulos.`;
   console.log("Ejercicio 2: map →", titulos);
 }
 
 function verLargas() {
-  const largas = peliculas.filter(pelicula=> pelicula.duracion > 120);
+  const largas = peliculas.filter(pelicula => pelicula.duracion > 120);
   pintarLista("#salida2", largas.map(comoTexto));   // comoTexto ya es una función: se pasa sin paréntesis
   document.querySelector("#mensaje2").textContent = `${largas.length} películas duran más de 2 horas.`;
   console.log("Ejercicio 2: filter →", largas);
 }
 
 function ordenarPorAnio() {
-  const ordenadas = [...peliculas].sort((a, b)=>a.anio - b.anio);
+  const ordenadas = [...peliculas].sort((a, b) => a.anio - b.anio);
   pintarLista("#salida2", ordenadas.map(comoTexto));
   document.querySelector("#mensaje2").textContent = "De la más antigua a la más reciente.";
   console.log("Ejercicio 2: sort →", ordenadas);
 }
 
 function verDuracionTotal() {
-  const minutos = peliculas.reduce((total, pelicula)=>total + pelicula.duracion);
+  const minutos = peliculas.reduce((total, pelicula) => total + pelicula.duracion);
   pintarLista("#salida2", [`${minutos} minutos de películas`]);
   document.querySelector("#mensaje2").textContent = "La suma de las seis duraciones.";
   console.log("Ejercicio 2: reduce →", minutos);
@@ -143,12 +143,12 @@ function buscarAntigua() {
   // TODO: el callback nuevo, ya con flecha: con find(), la primera película anterior a 1990.
   // TODO: find devuelve undefined si no hay ninguna: dilo en #mensaje2 y vacía la lista.
   //       Si la encuentra, píntala con pintarLista("#salida2", [comoTexto(antigua)]).
-  const antigua = peliculas.find(pelicula=> pelicula.anio<1990);
+  const antigua = peliculas.find(pelicula => pelicula.anio < 1990);
   console.log(antigua);
-  if (antigua == undefined){
+  if (antigua == undefined) {
     document.querySelector("#mensaje2").textContent = "No hay ninguna pelicula anteriior a 1990.";
   } else {
-    pintarLista("#salida2",[comoTexto(antigua)]);
+    pintarLista("#salida2", [comoTexto(antigua)]);
   }
 }
 
@@ -166,7 +166,7 @@ document.querySelector("#numeros3").textContent = `const numeros = [${numeros.jo
 function transformar(lista, operacion) {
   let copia = [...lista];
   let nuevo = [];
-  for (elemento of copia){    
+  for (elemento of copia) {
     nuevo.push(operacion(elemento));
   }
   return nuevo;
@@ -219,7 +219,7 @@ function verAbsolutos() {
 // TODO: crearContador(paso) guarda una variable cuenta que empieza en 0 y DEVUELVE una función.
 //       Cada vez que se llama a esa función, suma paso a cuenta y devuelve el valor nuevo.
 //       paso vale 1 por defecto.
-function crearContador(paso=1) {
+function crearContador(paso = 1) {
   let cuenta = 0;
   return () => {
     cuenta = cuenta + paso;
@@ -256,6 +256,31 @@ class Alumno {
     this.notas = [];
   }
 
+  anadirNota(nota) {
+    if (Number.isNaN(nota) || nota < 0 || nota > 10) {
+      return false;
+    } else {
+      this.notas.push(nota);
+      return true;
+    }
+  }
+
+  media() {
+    let todas = 0;
+    if (this.notas.length === 0) {
+      return 0;
+    } else {
+      todas = this.notas.reduce((total, elemento) => {
+        return total + elemento;
+      }, 0);
+      todas = todas / this.notas.length;
+      return todas;
+    }
+  }
+
+  presentarse() {
+    return `${this.nombre}, de ${this.curso}`;
+  }
   // TODO: anadirNota(nota): si la nota no es un número (Number.isNaN) o no está entre 0 y 10, devuelve false;
   //       si es válida, la añade a this.notas y devuelve true.
   // TODO: media(): 0 si no hay notas; si hay, la suma con reduce (con flecha) entre el número de notas.
@@ -266,12 +291,30 @@ class Alumno {
 class AlumnoFCT extends Alumno {
   // TODO: constructor(nombre, curso, empresa): primero super(nombre, curso) y después guarda la empresa.
   // TODO: presentarse(): la frase de Alumno (super.presentarse()) más «, en prácticas en TecnoSur».
+  constructor(nombre, curso, empresa) {
+    super(nombre, curso);
+    this.empresa = empresa;
+  }
+
+  presentarse() {
+    return `${super.presentarse()}, en prácticas en TecnoSur`;
+  }
 }
 
 const alumnos = [];
 
 // TODO: cuando tengas las clases, crea aquí dos alumnos de partida y añádelos a alumnos con push:
 //       un Alumno con dos notas y un AlumnoFCT con otras dos.
+const alumno = new Alumno("David Martínez", "2º DAW");
+alumno.anadirNota(10);
+alumno.anadirNota(8);
+
+const alumnofct = new AlumnoFCT("Javier Barreda", "2º DAW", "Medac");
+alumnofct.anadirNota(1);
+alumnofct.anadirNota(4);
+
+alumnos.push(alumno);
+alumnos.push(alumnofct);
 
 // Ya está hecha: pinta una tarjeta por alumno en #listaAlumnos y actualiza #totalAlumnos
 function pintarAlumnos() {
@@ -321,6 +364,46 @@ function crearAlumno() {
   // TODO: si hay notas, sepáralas con split(",") y conviértelas con map((texto) => Number(texto.trim())).
   //       Si alguna no es válida (some), error en #error5 y no sigas. Si todas lo son, añádelas con anadirNota().
   // TODO: añade el alumno a alumnos, oculta el error, vacía las casillas y llama a pintarAlumnos().
+  const nombre = document.querySelector("#nombre5").value.trim();
+  const empresa = document.querySelector("#empresa5").value.trim();
+  const curso = document.querySelector("#curso5").value.trim();
+  const notas = document.querySelector("#notas5").value.trim();
+  const error = document.querySelector("#error5");
+
+  let alumno;
+  if (nombre === "") {
+    error5.textContent = "Tienes que poner un nombre.";
+    error5.classList.remove("d-none");
+  } else if (empresa === "") {
+    alumno = new Alumno(nombre, curso);
+    alumnos.push(alumno);
+  } else {
+    alumno = new AlumnoFCT(nombre, curso, empresa);
+    alumnos.push(alumno);
+  }
+  console.log(alumno);
+  console.log(alumno.notas)
+  let notasarray; 
+
+  if (notas !== "") {
+    notasarray = notas.split(",").map((texto) => Number(texto.trim()));
+
+    if (notasarray.some((nota) => Number.isNaN(nota) || nota < 0 || nota > 10)) {
+      error5.textContent = "Las notas tienen que ser entre 0 y 10.";
+      error5.classList.remove("d-none");
+      return;
+    } else {
+      notasarray.map(nota => alumno.anadirNota(nota));
+      error5.classList.add("d-none");
+
+      document.querySelector("#nombre5").value = "";
+      document.querySelector("#curso5").value = "";
+      document.querySelector("#empresa5").value = "";
+      document.querySelector("#notas5").value = "";
+
+      pintarAlumnos();
+    }
+  }
 }
 
 pintarAlumnos();
