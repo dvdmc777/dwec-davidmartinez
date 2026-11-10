@@ -1,5 +1,5 @@
 /*
-  Tarea 7 · DWEC · [Tu nombre y apellidos]
+  Tarea 7 · DWEC · David Martínez Castro
   Funciones, flechas y clases.
 
   Cómo usar esta plantilla:
@@ -42,9 +42,11 @@ function pintarLista(selector, textos) {
 //       iva vale 21 por defecto y descuento, 0 por defecto (parámetros por defecto).
 //       Primero se resta el descuento (un tanto por ciento de la base) y después se suma el IVA.
 //       Comprueba en la consola: calcularPrecio(100) tiene que dar 121.
-function calcularPrecio(base, iva, descuento) {
-
+function calcularPrecio(base, iva = 21, descuento = 0) {
+ const descuentofinal = base -(base * descuento)/100;
+ return descuentofinal + (descuentofinal * iva)/100;
 }
+console.log(calcularPrecio(100));
 
 // Ya está hecha: 74.8 → "74.80 €"
 function formatearEuros(cantidad) {
@@ -58,6 +60,32 @@ function mostrarPrecio() {
   //       use el valor por defecto. Si no, comprueba que está entre 0 y 100 y pásaselo.
   // TODO: oculta el error y pinta el desglose en #salida1 con pintarLista():
   //       «Precio sin IVA: …», «Descuento: … %», «IVA: … %» y «Precio final: …» (con formatearEuros).
+  const base = document.querySelector("#base").value;
+  const iva = Number(document.querySelector("#iva").value);
+  const descuento = document.querySelector("#descuento").value;
+  const error1 = document.querySelector("#error1");
+
+  if (base === "" || base < 0){
+    error1.classList.remove("d-none");
+    return;
+  }
+
+  let precio;
+
+  if (descuento === ""){
+    precio = calcularPrecio(base,iva);
+  } else if (descuento >= 0 && descuento <= 100){
+    precio = calcularPrecio(base,iva,descuento);
+  }
+  error1.classList.add("d-none");
+
+  pintarLista("#salida1",[
+    `Precio sin IVA: ${formatearEuros(Number(base))}`,
+    `Descuento: ${descuento}%`,
+    `IVA: ${iva}%`,
+    `Precio final: ${formatearEuros(precio)}`
+  ]);
+  console.log(precio);
 }
 
 
